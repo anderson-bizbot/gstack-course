@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 Generate per-skill lesson files, skills-catalog.md, and skill-index.json
-from the gstack repo. Each lesson teaches a business person how to use
-that skill through the Claude Code prompt chain.
+from gstack's SKILL.md.tmpl source templates (not the generated SKILL.md).
+
+Templates are the source of truth — they contain only the unique workflow
+without injected boilerplate (preamble, telemetry, AskUserQuestion format, etc.)
 """
 
 import json
@@ -14,26 +16,15 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 
-# Shared sections that appear in every skill (boilerplate to strip)
-BOILERPLATE_HEADERS = [
-    'Preamble (run first)',
-    'AskUserQuestion Format',
-    'Completeness Principle',
-    'Boil the Lake',
-    'Contributor Mode',
-    'Completion Status Protocol',
-    'Telemetry (run last)',
-]
-
-# Markers that indicate start of boilerplate
-BOILERPLATE_MARKERS = [
-    '## Preamble (run first)',
-    '## AskUserQuestion Format',
-    '## Completeness Principle — Boil the Lake',
-    '## Contributor Mode',
-    '## Completion Status Protocol',
-    '## Telemetry (run last)',
-    '<!-- AUTO-GENERATED from SKILL.md.tmpl',
+# Template placeholders to strip
+TEMPLATE_PLACEHOLDERS = [
+    '{{PREAMBLE}}',
+    '{{BROWSE_SETUP}}',
+    '{{TELEMETRY}}',
+    '{{COMPLETION_STATUS}}',
+    '{{CONTRIBUTOR_MODE}}',
+    '{{COMPLETENESS}}',
+    '{{ASK_USER_QUESTION}}',
 ]
 
 
@@ -47,54 +38,30 @@ def extract_frontmatter(content: str) -> dict:
         return {}
 
 
-def strip_boilerplate(content: str) -> str:
-    """Remove shared boilerplate sections, keep skill-specific workflow."""
+def strip_template_placeholders(content: str) -> str:
+    """Remove frontmatter and {{PLACEHOLDER}} lines from template."""
     # Remove frontmatter
     content = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
-    # Remove HTML comments
-    content = re.sub(r'<!--.*?-->\s*\n?', '', content, flags=re.DOTALL)
-
-    lines = content.split('\n')
-    result = []
-    skip = False
-
-    for i, line in enumerate(lines):
-        # Check if this line starts a boilerplate section
-        is_boilerplate_start = False
-        for marker in BOILERPLATE_MARKERS:
-            if line.strip().startswith(marker.strip()):
-                is_boilerplate_start = True
-                break
-
-        if is_boilerplate_start:
-            skip = True
+    # Remove placeholder lines
+    lines = []
+    for line in content.split('\n'):
+        stripped = line.strip()
+        if any(stripped == p for p in TEMPLATE_PLACEHOLDERS):
             continue
-
-        # Stop skipping when we hit a new ## heading that isn't boilerplate
-        if skip and re.match(r'^##\s+', line):
-            is_still_boilerplate = False
-            for marker in BOILERPLATE_MARKERS:
-                if line.strip().startswith(marker.strip()):
-                    is_still_boilerplate = True
-                    break
-            if not is_still_boilerplate:
-                skip = False
-
-        if not skip:
-            result.append(line)
-
-    return '\n'.join(result).strip()
+        lines.append(line)
+    return '\n'.join(lines).strip()
 
 
-def extract_phases(unique_content: str) -> list[dict]:
+def extract_phases(content: str) -> list[dict]:
     """Extract named phases/sections from the unique content."""
     phases = []
     current = None
 
-    for line in unique_content.split('\n'):
+    for line in content.split('\n'):
         heading_match = re.match(r'^(#{1,3})\s+(.+)$', line)
         if heading_match:
             if current:
+                current['content'] = '\n'.join(current['content_lines']).strip()
                 phases.append(current)
             level = len(heading_match.group(1))
             current = {
@@ -106,6 +73,7 @@ def extract_phases(unique_content: str) -> list[dict]:
             current['content_lines'].append(line)
 
     if current:
+        current['content'] = '\n'.join(current['content_lines']).strip()
         phases.append(current)
 
     return phases
@@ -130,182 +98,192 @@ def classify_phase(name: str, description: str) -> str:
     return 'Other'
 
 
-def slash_name(skill_name: str) -> str:
-    if skill_name.startswith('gstack-'):
-        return '/' + skill_name[7:]
-    if skill_name == 'gstack':
+def slash_name(dir_name: str) -> str:
+    """Convert template dir name to slash command."""
+    if dir_name == 'gstack' or dir_name == '.':
         return '/gstack'
-    return '/' + skill_name
+    return '/' + dir_name
+
+
+def find_templates(gstack_path: Path) -> list[tuple[str, Path]]:
+    """Find all SKILL.md.tmpl files and their logical names."""
+    templates = []
+    for tmpl in sorted(gstack_path.rglob('SKILL.md.tmpl')):
+        # Skip the root template (it's the main gstack skill, handle separately)
+        rel = tmpl.relative_to(gstack_path)
+        dir_name = str(rel.parent)
+        if dir_name == '.':
+            dir_name = 'gstack'
+        templates.append((dir_name, tmpl))
+    return templates
+
+
+def extract_questions(content: str) -> list[str]:
+    """Extract questions Claude will ask the user."""
+    questions = []
+    # Pattern: **Ask:** "question?"
+    for m in re.finditer(r'\*\*Ask:\*\*\s*["\u201c]([^"\u201d]+\?)', content):
+        questions.append(m.group(1))
+    # Pattern: "question?" in quoted blocks
+    for m in re.finditer(r'["\u201c]([A-Z][^"\u201d]{20,}\?)\s*["\u201d]', content):
+        q = m.group(1)
+        if q not in questions:
+            questions.append(q)
+    # Pattern: > question text?
+    for m in re.finditer(r'^>\s*(.{20,}\?)\s*$', content, re.MULTILINE):
+        q = m.group(1).strip()
+        if q not in questions and not q.startswith('http'):
+            questions.append(q)
+    return questions[:8]
+
+
+def extract_outputs(phases: list) -> list[str]:
+    """Identify what the skill produces."""
+    outputs = []
+    output_keywords = ['write', 'save', 'create', 'produce', 'generate', 'output', 'design doc', 'PR', 'commit']
+    for phase in phases:
+        title_lower = phase['title'].lower()
+        content = phase.get('content', '')
+        if any(k in title_lower for k in ['output', 'design doc', 'result', 'handoff', 'report', 'ship']):
+            outputs.append(phase['title'])
+        # Check for "Write to" patterns
+        for m in re.finditer(r'Write to\s+`([^`]+)`', content):
+            outputs.append(f"File: `{m.group(1)}`")
+    return outputs[:5]
 
 
 def generate_lesson(skill: dict, unique_content: str, phases: list) -> str:
     """Generate a lesson file for a single skill."""
     lines = []
     slash = skill['slash']
-    name = skill['name']
     desc = skill['description']
     sprint_phase = skill['phase']
+    version = skill.get('version', '')
 
     lines.append(f'# Lesson: `{slash}`')
     lines.append('')
-    lines.append(f'> Sprint phase: **{sprint_phase}** | Size: {skill["size_bytes"]:,} bytes')
-    lines.append(f'> Source: `garrytan/gstack/.agents/skills/{skill["dir_name"]}/SKILL.md`')
+    ver_str = f' | Version: {version}' if version else ''
+    lines.append(f'> Sprint phase: **{sprint_phase}** | Template: {skill["template_lines"]} lines{ver_str}')
+    lines.append(f'> Source: `garrytan/gstack/{skill["dir_name"]}/SKILL.md.tmpl`')
     lines.append('')
 
-    # --- What is this? (plain English, no jargon) ---
+    # --- What is this? ---
     lines.append('## What Is This?')
     lines.append('')
-    # Use first line of description
     desc_lines = desc.strip().split('\n')
-    for dl in desc_lines[:3]:
-        if dl.strip():
-            lines.append(dl.strip())
+    # Get substantive lines (not trigger/suggest lines)
+    for dl in desc_lines:
+        dl = dl.strip()
+        if dl and not dl.lower().startswith('use when') and not dl.lower().startswith('proactively'):
+            lines.append(dl)
     lines.append('')
 
     # --- When do you use it? ---
     lines.append('## When Do You Use It?')
     lines.append('')
-    # Extract "Use when" from description
-    use_when = []
     for dl in desc_lines:
-        if 'use when' in dl.lower() or 'proactively suggest' in dl.lower():
-            use_when.append(dl.strip())
-    if use_when:
-        for uw in use_when:
-            lines.append(f'- {uw}')
-    else:
-        lines.append(f'- When the {sprint_phase.lower()} phase of your sprint calls for it')
+        dl = dl.strip()
+        if 'use when' in dl.lower() or 'proactively suggest' in dl.lower() or 'use before' in dl.lower():
+            lines.append(f'- {dl}')
+    if not any('use when' in dl.lower() or 'proactively' in dl.lower() for dl in desc_lines):
+        lines.append(f'- During the **{sprint_phase}** phase of your sprint')
     lines.append('')
 
-    # --- What do you say to Claude? ---
+    # --- What do you say? ---
     lines.append('## What Do You Say to Claude?')
     lines.append('')
-    lines.append(f'Type `{slash}` in Claude Code. That\'s it. The skill takes over from there.')
+    lines.append(f'Type `{slash}` in Claude Code. The skill activates and guides you.')
     lines.append('')
-    # Extract trigger phrases from description
-    triggers = re.findall(r'"([^"]+)"', desc)
+    triggers = re.findall(r'"([^"]{3,})"', desc)
     if triggers:
-        lines.append('**Trigger phrases that also work:**')
-        for t in triggers[:8]:
+        lines.append('**Natural language triggers:**')
+        for t in triggers[:6]:
             lines.append(f'- "{t}"')
         lines.append('')
 
-    # --- What will Claude ask you? ---
+    # --- What will Claude ask? ---
+    questions = extract_questions(unique_content)
     lines.append('## What Will Claude Ask You?')
     lines.append('')
-    # Extract questions/AskUserQuestion patterns from unique content
-    questions = []
-    for phase in phases:
-        content = '\n'.join(phase['content_lines'])
-        # Find quoted questions
-        q_matches = re.findall(r'"([^"]{20,})\?"', content)
-        questions.extend([q + '?' for q in q_matches[:3]])
-        # Find "Ask:" patterns
-        ask_matches = re.findall(r'Ask:\s*"([^"]+)"', content)
-        questions.extend(ask_matches[:3])
-
     if questions:
-        lines.append('Claude will walk you through a structured conversation. Key questions include:')
+        lines.append('Claude walks you through a structured conversation:')
         lines.append('')
-        for q in questions[:6]:
+        for q in questions:
             lines.append(f'- *"{q}"*')
         lines.append('')
     else:
-        lines.append('Claude handles this automatically — you provide the context, it runs the workflow.')
+        lines.append('This skill runs mostly automatically — you provide initial context and Claude handles the rest.')
         lines.append('')
 
-    # --- What do you get out of it? ---
+    # --- What do you get? ---
+    outputs = extract_outputs(phases)
     lines.append('## What Do You Get?')
     lines.append('')
-    # Look for output mentions in phases
-    outputs = []
-    for phase in phases:
-        title = phase['title'].lower()
-        if any(k in title for k in ['output', 'design doc', 'result', 'handoff', 'report']):
-            outputs.append(phase['title'])
-
     if outputs:
         for o in outputs:
-            lines.append(f'- **{o}**')
-        lines.append('')
+            lines.append(f'- {o}')
     else:
-        lines.append(f'The skill produces structured output relevant to the {sprint_phase.lower()} phase.')
-        lines.append('')
-
-    # --- The Workflow (simplified) ---
-    lines.append('## The Workflow (Step by Step)')
+        lines.append(f'Structured output for the **{sprint_phase}** phase of your sprint.')
     lines.append('')
-    phase_count = 0
+
+    # --- The workflow ---
+    lines.append('## The Workflow')
+    lines.append('')
+    step_num = 0
     for phase in phases:
         if phase['level'] <= 2:
-            phase_count += 1
-            content_preview = '\n'.join(phase['content_lines'][:3]).strip()
-            # Get first meaningful sentence
+            step_num += 1
+            # Get first meaningful sentence from content
             first_sentence = ''
-            for cl in phase['content_lines']:
+            for cl in phase.get('content', '').split('\n'):
                 cl = cl.strip()
-                if cl and not cl.startswith('```') and not cl.startswith('|') and not cl.startswith('-'):
-                    first_sentence = cl[:150]
+                if cl and not cl.startswith('```') and not cl.startswith('|') and not cl.startswith('-') and not cl.startswith('#') and len(cl) > 15:
+                    first_sentence = cl[:200]
+                    if len(cl) > 200:
+                        first_sentence += '...'
                     break
-            lines.append(f'{phase_count}. **{phase["title"]}**')
+            lines.append(f'**Step {step_num}: {phase["title"]}**')
             if first_sentence:
-                lines.append(f'   {first_sentence}')
+                lines.append(f'> {first_sentence}')
             lines.append('')
-
-    if phase_count == 0:
-        lines.append('This skill runs as a single automated step.')
+    if step_num == 0:
+        lines.append('This skill runs as a single automated workflow.')
         lines.append('')
 
-    # --- Where it fits ---
-    lines.append('## Where It Fits in the Sprint')
+    # --- Sprint position ---
+    lines.append('## Where It Fits')
     lines.append('')
     lines.append('```')
-    sprint = '/office-hours → /plan-ceo-review → /plan-eng-review → [build] → /review → /qa → /ship → /retro'
-    # Highlight current skill
-    highlighted = sprint.replace(slash, f'>>>{slash}<<<')
-    lines.append(highlighted)
+    lines.append(f'Think → Plan → Build → Review → Test → Ship')
+    lines.append(f'                    ↑')
+    lines.append(f'        You are here: {sprint_phase.upper()} phase')
     lines.append('```')
     lines.append('')
 
-    # --- What comes next? ---
+    # --- What comes next ---
+    next_map = {
+        'Think': ['After thinking, plan: `/plan-ceo-review` → `/plan-eng-review`', 'Then build, review, test, ship.'],
+        'Review': ['After review, test: `/qa` or `/qa-only`', 'Then ship: `/ship`'],
+        'Test': ['After testing, ship: `/ship`', 'If bugs found, fix and re-test.'],
+        'Ship': ['After shipping, document: `/document-release`', 'End of week: `/retro`'],
+        'Safety': ['Continue your current workflow with safety enabled.', 'Use `/unfreeze` when done.'],
+        'Meta': ['Continue with your current sprint.'],
+    }
     lines.append('## What Comes Next?')
     lines.append('')
-    next_skills = {
-        'Think': ['/plan-ceo-review', '/plan-eng-review', '/plan-design-review'],
-        'Review': ['/qa', '/ship'],
-        'Test': ['/ship', '/review'],
-        'Ship': ['/document-release', '/retro'],
-        'Safety': ['(continue your current workflow with safety enabled)'],
-        'Meta': ['(continue with your current sprint)'],
-    }
-    for ns in next_skills.get(sprint_phase, ['See workflow patterns']):
-        lines.append(f'- `{ns}`')
-    lines.append('')
-
-    # --- Pro Tips ---
-    lines.append('## Pro Tips')
-    lines.append('')
-    # Extract anti-patterns or tips from unique content
-    tips_found = False
-    for phase in phases:
-        content = '\n'.join(phase['content_lines'])
-        if 'red flag' in content.lower():
-            lines.append('- Watch for red flags Claude identifies — they\'re based on YC pattern matching')
-            tips_found = True
-            break
-    if not tips_found:
-        lines.append(f'- Run this skill before moving to the next sprint phase')
-        lines.append(f'- The output feeds automatically into downstream skills')
+    for n in next_map.get(sprint_phase, ['Continue with the next sprint phase.']):
+        lines.append(f'- {n}')
     lines.append('')
 
     return '\n'.join(lines)
 
 
 def generate(gstack_path: str, output_dir: str):
-    skills_dir = Path(gstack_path) / '.agents' / 'skills'
+    gstack = Path(gstack_path)
+    templates = find_templates(gstack)
 
-    if not skills_dir.exists():
-        print(f"ERROR: {skills_dir} not found", file=sys.stderr)
+    if not templates:
+        print(f"ERROR: No SKILL.md.tmpl files found in {gstack_path}", file=sys.stderr)
         sys.exit(1)
 
     output_path = Path(output_dir)
@@ -314,50 +292,44 @@ def generate(gstack_path: str, output_dir: str):
 
     skills = []
 
-    for skill_dir in sorted(skills_dir.iterdir()):
-        if not skill_dir.is_dir():
-            continue
-
-        skill_md = skill_dir / 'SKILL.md'
-        if not skill_md.exists():
-            continue
-
-        content = skill_md.read_text(encoding='utf-8')
+    for dir_name, tmpl_path in templates:
+        content = tmpl_path.read_text(encoding='utf-8')
         frontmatter = extract_frontmatter(content)
 
-        name = frontmatter.get('name', skill_dir.name)
+        name = frontmatter.get('name', dir_name)
         description = frontmatter.get('description', '')
+        version = frontmatter.get('version', '')
         if not isinstance(description, str):
             description = str(description)
 
         desc_oneline = description.strip().split('\n')[0].strip()[:200]
-        size_bytes = len(content.encode('utf-8'))
-        phase = classify_phase(skill_dir.name, description)
 
-        # Extract unique content (strip boilerplate)
-        unique_content = strip_boilerplate(content)
+        # Get unique content (strip placeholders)
+        unique_content = strip_template_placeholders(content)
+        template_lines = len(content.split('\n'))
+        unique_lines = len(unique_content.split('\n'))
         phases = extract_phases(unique_content)
 
+        phase = classify_phase(dir_name, description)
+
         skill_data = {
-            'dir_name': skill_dir.name,
+            'dir_name': dir_name,
             'name': name,
-            'slash': slash_name(skill_dir.name),
+            'slash': slash_name(dir_name),
             'description': description.strip(),
             'description_oneline': desc_oneline,
+            'version': str(version) if version else '',
             'phase': phase,
-            'size_bytes': size_bytes,
-            'unique_size_bytes': len(unique_content.encode('utf-8')),
+            'template_lines': template_lines,
+            'unique_lines': unique_lines,
             'section_count': len(phases),
             'sections': [p['title'] for p in phases],
-            'has_scripts': (skill_dir / 'scripts').exists(),
-            'has_references': (skill_dir / 'references').exists(),
-            'has_assets': (skill_dir / 'assets').exists(),
         }
         skills.append(skill_data)
 
-        # Generate per-skill lesson
+        # Generate lesson
         lesson = generate_lesson(skill_data, unique_content, phases)
-        lesson_file = lessons_dir / f'{skill_dir.name}.md'
+        lesson_file = lessons_dir / f'{dir_name}.md'
         lesson_file.write_text(lesson, encoding='utf-8')
 
     # Build index JSON
@@ -371,75 +343,62 @@ def generate(gstack_path: str, output_dir: str):
     with open(output_path / 'skill-index.json', 'w') as f:
         json.dump(index, f, indent=2)
 
-    # Build markdown catalog (now just a directory pointing to lessons)
+    # Build catalog
     phases_order = ['Think', 'Review', 'Test', 'Ship', 'Safety', 'Meta', 'Other']
     by_phase = {}
     for s in skills:
         by_phase.setdefault(s['phase'], []).append(s)
 
-    cat_lines = [
+    cat = [
         '# gstack Skills Catalog',
         '',
-        f'> Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack)',
+        f'> Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**',
         f'> {len(skills)} skills | Generated: {datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")}',
-        '',
-        '## How to Use This Course',
-        '',
-        'Each skill has a **lesson file** in `references/lessons/` that teaches you:',
-        '- What the skill does (plain English)',
-        '- When to use it',
-        '- What you say to Claude to trigger it',
-        '- What Claude will ask you',
-        '- What you get out of it',
-        '- Where it fits in the sprint workflow',
-        '',
-        'Read the lesson for any skill you want to learn. Start with `/office-hours`.',
         '',
         '## Quick Reference',
         '',
-        '| Phase | Skill | What You Say | One-Liner |',
-        '|-------|-------|-------------|-----------|',
+        '| Phase | Skill | What You Say | Lines | Version |',
+        '|-------|-------|-------------|-------|---------|',
     ]
 
     for phase in phases_order:
         for s in by_phase.get(phase, []):
-            cat_lines.append(
+            ver = s['version'] or '-'
+            cat.append(
                 f"| {phase} | [`{s['slash']}`](lessons/{s['dir_name']}.md) "
-                f"| Type `{s['slash']}` | {s['description_oneline'][:60]} |"
+                f"| `{s['slash']}` | {s['template_lines']} | {ver} |"
             )
 
-    cat_lines.append('')
-    cat_lines.append('## The Sprint (Read in This Order)')
-    cat_lines.append('')
-    cat_lines.append('gstack is a process. Skills chain together:')
-    cat_lines.append('')
-    cat_lines.append('```')
-    cat_lines.append('Think:  /office-hours → /plan-ceo-review → /plan-eng-review')
-    cat_lines.append('                        /plan-design-review → /design-consultation')
-    cat_lines.append('Build:  [you + Claude write code]')
-    cat_lines.append('Review: /review → /investigate → /design-review')
-    cat_lines.append('Test:   /qa → /qa-only → /browse')
-    cat_lines.append('Ship:   /ship → /document-release → /retro')
-    cat_lines.append('Safety: /careful → /freeze → /guard → /unfreeze')
-    cat_lines.append('```')
-    cat_lines.append('')
-    cat_lines.append('## Lessons by Phase')
-    cat_lines.append('')
+    cat.append('')
+    cat.append('## The Sprint Flow')
+    cat.append('')
+    cat.append('```')
+    cat.append('THINK:  /office-hours → /plan-ceo-review → /plan-eng-review')
+    cat.append('        /plan-design-review → /design-consultation')
+    cat.append('BUILD:  [you describe what you want, Claude writes code]')
+    cat.append('REVIEW: /review → /investigate → /design-review')
+    cat.append('TEST:   /qa → /qa-only → /browse')
+    cat.append('SHIP:   /ship → /document-release → /retro')
+    cat.append('SAFETY: /careful → /freeze → /guard → /unfreeze')
+    cat.append('```')
+    cat.append('')
+    cat.append('## Lessons by Phase')
+    cat.append('')
 
     for phase in phases_order:
         phase_skills = by_phase.get(phase, [])
         if not phase_skills:
             continue
-        cat_lines.append(f'### {phase}')
-        cat_lines.append('')
+        cat.append(f'### {phase}')
+        cat.append('')
         for s in phase_skills:
-            cat_lines.append(f'- [`{s["slash"]}`](lessons/{s["dir_name"]}.md) — {s["description_oneline"][:80]}')
-        cat_lines.append('')
+            cat.append(f'- [`{s["slash"]}`](lessons/{s["dir_name"]}.md) — {s["description_oneline"][:80]}')
+        cat.append('')
 
     with open(output_path / 'skills-catalog.md', 'w') as f:
-        f.write('\n'.join(cat_lines))
+        f.write('\n'.join(cat))
 
-    print(f"Generated: {len(skills)} skills")
+    print(f"Generated from templates: {len(skills)} skills")
     print(f"  → {output_path / 'skill-index.json'}")
     print(f"  → {output_path / 'skills-catalog.md'}")
     print(f"  → {lessons_dir}/ ({len(skills)} lesson files)")

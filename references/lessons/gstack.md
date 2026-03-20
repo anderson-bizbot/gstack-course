@@ -1,13 +1,44 @@
 # Lesson: `/gstack`
 
-> Sprint phase: **Other** | Size: 26,233 bytes
-> Source: `garrytan/gstack/.agents/skills/gstack/SKILL.md`
+> Sprint phase: **Other** | Template: 281 lines | Version: 1.1.0
+> Source: `garrytan/gstack/gstack/SKILL.md.tmpl`
 
 ## What Is This?
 
 Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with
 elements, verify page state, diff before/after actions, take annotated screenshots, check
 responsive layouts, test forms and uploads, handle dialogs, and assert element states.
+~100ms per command. Use when you need to test a feature, verify a deployment, dogfood a
+user flow, or file a bug with evidence.
+gstack also includes development workflow skills. When you notice the user is at
+these stages, suggest the appropriate skill:
+- Brainstorming a new idea → suggest /office-hours
+- Reviewing a plan (strategy) → suggest /plan-ceo-review
+- Reviewing a plan (architecture) → suggest /plan-eng-review
+- Reviewing a plan (design) → suggest /plan-design-review
+- Creating a design system → suggest /design-consultation
+- Debugging errors → suggest /investigate
+- Testing the app → suggest /qa
+- Code review before merge → suggest /review
+- Visual design audit → suggest /design-review
+- Ready to deploy / create PR → suggest /ship
+- Post-ship doc updates → suggest /document-release
+- Weekly retrospective → suggest /retro
+- Wanting a second opinion or adversarial code review → suggest /codex
+- Working with production or live systems → suggest /careful
+- Want to scope edits to one module/directory → suggest /freeze
+- Maximum safety mode (destructive warnings + edit restrictions) → suggest /guard
+- Removing edit restrictions → suggest /unfreeze
+- Upgrading gstack to latest version → suggest /gstack-upgrade
+If the user pushes back on skill suggestions ("stop suggesting things",
+"I don't need suggestions", "too aggressive"):
+1. Stop suggesting for the rest of this session
+2. Run: gstack-config set proactive false
+3. Say: "Got it — I'll stop suggesting skills. Just tell me to be proactive
+again if you change your mind."
+If the user says "be proactive again" or "turn on suggestions":
+1. Run: gstack-config set proactive true
+2. Say: "Proactive suggestions are back on."
 
 ## When Do You Use It?
 
@@ -15,9 +46,9 @@ responsive layouts, test forms and uploads, handle dialogs, and assert element s
 
 ## What Do You Say to Claude?
 
-Type `/gstack` in Claude Code. That's it. The skill takes over from there.
+Type `/gstack` in Claude Code. The skill activates and guides you.
 
-**Trigger phrases that also work:**
+**Natural language triggers:**
 - "stop suggesting things"
 - "I don't need suggestions"
 - "too aggressive"
@@ -25,150 +56,133 @@ Type `/gstack` in Claude Code. That's it. The skill takes over from there.
    again if you change your mind."
 - "be proactive again"
 - "turn on suggestions"
-- "Proactive suggestions are back on."
 
 ## What Will Claude Ask You?
 
-Claude will walk you through a structured conversation. Key questions include:
-
-- *"gstack browse needs a one-time build (~10 seconds). OK to proceed?"*
+This skill runs mostly automatically — you provide initial context and Claude handles the rest.
 
 ## What Do You Get?
 
-- **Raw output**
+Structured output for the **Other** phase of your sprint.
 
-## The Workflow (Step by Step)
+## The Workflow
 
-1. **Steps to reproduce**
-   1. {step}
+**Step 1: gstack browse: QA Testing & Dogfooding**
+> Persistent headless Chromium. First call auto-starts (~3s), then ~100-200ms per command.
 
-2. **Raw output**
-   {paste the actual error or unexpected output here}
+**Step 2: IMPORTANT**
 
-3. **What would make this a 10**
-   {one sentence: what gstack should have done differently}
+**Step 3: QA Workflows**
 
-4. **SETUP (run this check BEFORE any browse command)**
-   _ROOT=$(git rev-parse --show-toplevel 2>/dev/null)
+**Step 4: 1. Go to the page**
+> $B goto https://app.example.com/login
 
-5. **IMPORTANT**
+**Step 5: 2. See what's interactive**
 
-6. **QA Workflows**
+**Step 6: 3. Fill the form using refs**
+> $B fill @e3 "test@example.com"
 
-7. **1. Go to the page**
-   $B goto https://app.example.com/login
+**Step 7: 4. Verify it worked**
+> $B snapshot -D              # diff shows what changed after clicking
 
-8. **2. See what's interactive**
-   $B snapshot -i
+**Step 8: Navigate to the feature**
+> $B goto https://app.example.com/new-feature
 
-9. **3. Fill the form using refs**
-   $B fill @e3 "test@example.com"
+**Step 9: Take annotated screenshot — shows every interactive element with labels**
+> $B snapshot -i -a -o /tmp/feature-annotated.png
 
-10. **4. Verify it worked**
-   $B snapshot -D              # diff shows what changed after clicking
+**Step 10: Find ALL clickable things (including divs with cursor:pointer)**
 
-11. **Navigate to the feature**
-   $B goto https://app.example.com/new-feature
+**Step 11: Walk through the flow**
+> $B snapshot -i          # baseline
 
-12. **Take annotated screenshot — shows every interactive element with labels**
-   $B snapshot -i -a -o /tmp/feature-annotated.png
+**Step 12: Check element states**
+> $B is visible ".success-toast"
 
-13. **Find ALL clickable things (including divs with cursor:pointer)**
-   $B snapshot -C
+**Step 13: Check console for errors after interactions**
 
-14. **Walk through the flow**
-   $B snapshot -i          # baseline
+**Step 14: Quick: 3 screenshots at mobile/tablet/desktop**
+> $B goto https://yourapp.com
 
-15. **Check element states**
-   $B is visible ".success-toast"
+**Step 15: Manual: specific viewport**
+> $B viewport 375x812     # iPhone
 
-16. **Check console for errors after interactions**
-   $B console
+**Step 16: Element screenshot (crop to specific element)**
+> $B screenshot "#hero-banner" /tmp/hero.png
 
-17. **Quick: 3 screenshots at mobile/tablet/desktop**
-   $B goto https://yourapp.com
+**Step 17: Region crop**
+> $B screenshot --clip 0,0,800,600 /tmp/above-fold.png
 
-18. **Manual: specific viewport**
-   $B viewport 375x812     # iPhone
+**Step 18: Viewport only (no scroll)**
+> $B screenshot --viewport /tmp/viewport.png
 
-19. **Element screenshot (crop to specific element)**
-   $B screenshot "#hero-banner" /tmp/hero.png
+**Step 19: Submit empty — check validation errors appear**
+> $B click @e10                        # submit button
 
-20. **Region crop**
-   $B screenshot --clip 0,0,800,600 /tmp/above-fold.png
+**Step 20: Fill and resubmit**
+> $B fill @e3 "valid input"
 
-21. **Viewport only (no scroll)**
-   $B screenshot --viewport /tmp/viewport.png
+**Step 21: Set up dialog handling BEFORE triggering**
+> $B dialog-accept              # will auto-accept next alert/confirm
 
-22. **Submit empty — check validation errors appear**
-   $B click @e10                        # submit button
+**Step 22: For prompts that need input**
+> $B dialog-accept "my answer"  # accept with text
 
-23. **Fill and resubmit**
-   $B fill @e3 "valid input"
+**Step 23: Import cookies from your real browser (opens interactive picker)**
+> $B cookie-import-browser
 
-24. **Set up dialog handling BEFORE triggering**
-   $B dialog-accept              # will auto-accept next alert/confirm
+**Step 24: Or import a specific domain directly**
+> $B cookie-import-browser comet --domain .github.com
 
-25. **For prompts that need input**
-   $B dialog-accept "my answer"  # accept with text
+**Step 25: Now test authenticated pages**
+> $B goto https://github.com/settings/profile
 
-26. **Import cookies from your real browser (opens interactive picker)**
-   $B cookie-import-browser
+**Step 26: Quick Assertion Patterns**
 
-27. **Or import a specific domain directly**
-   $B cookie-import-browser comet --domain .github.com
+**Step 27: Element exists and is visible**
+> $B is visible ".modal"
 
-28. **Now test authenticated pages**
-   $B goto https://github.com/settings/profile
+**Step 28: Button is enabled/disabled**
+> $B is enabled "#submit-btn"
 
-29. **Quick Assertion Patterns**
+**Step 29: Checkbox state**
+> $B is checked "#agree"
 
-30. **Element exists and is visible**
-   $B is visible ".modal"
+**Step 30: Input is editable**
+> $B is editable "#name-field"
 
-31. **Button is enabled/disabled**
-   $B is enabled "#submit-btn"
+**Step 31: Element has focus**
+> $B is focused "#search-input"
 
-32. **Checkbox state**
-   $B is checked "#agree"
+**Step 32: Page contains text**
+> $B js "document.body.textContent.includes('Success')"
 
-33. **Input is editable**
-   $B is editable "#name-field"
+**Step 33: Element count**
+> $B js "document.querySelectorAll('.list-item').length"
 
-34. **Element has focus**
-   $B is focused "#search-input"
+**Step 34: Specific attribute value**
+> $B attrs "#logo"    # returns all attributes as JSON
 
-35. **Page contains text**
-   $B js "document.body.textContent.includes('Success')"
+**Step 35: CSS property**
+> $B css ".button" "background-color"
 
-36. **Element count**
-   $B js "document.querySelectorAll('.list-item').length"
+**Step 36: Snapshot System**
+> {{SNAPSHOT_FLAGS}}
 
-37. **Specific attribute value**
-   $B attrs "#logo"    # returns all attributes as JSON
+**Step 37: Command Reference**
+> {{COMMAND_REFERENCE}}
 
-38. **CSS property**
-   $B css ".button" "background-color"
+**Step 38: Tips**
+> 1. **Navigate once, query many times.** `goto` loads the page; then `text`, `js`, `screenshot` all hit the loaded page instantly.
 
-39. **Snapshot System**
-   The snapshot is your primary tool for understanding and interacting with pages.
-
-40. **Command Reference**
-
-41. **Tips**
-   1. **Navigate once, query many times.** `goto` loads the page; then `text`, `js`, `screenshot` all hit the loaded page instantly.
-
-## Where It Fits in the Sprint
+## Where It Fits
 
 ```
-/office-hours → /plan-ceo-review → /plan-eng-review → [build] → /review → /qa → /ship → /retro
+Think → Plan → Build → Review → Test → Ship
+                    ↑
+        You are here: OTHER phase
 ```
 
 ## What Comes Next?
 
-- `See workflow patterns`
-
-## Pro Tips
-
-- Run this skill before moving to the next sprint phase
-- The output feeds automatically into downstream skills
+- Continue with the next sprint phase.
