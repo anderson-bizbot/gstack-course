@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T19:19:40.722379+00:00",
+  "generated_at": "2026-03-21T19:59:49.807331+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 22,
   "skills": [
@@ -126,8 +126,8 @@
       "description_oneline": "OpenAI Codex CLI wrapper \u2014 three modes. Code review: independent diff review via",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 354,
-      "unique_lines": 333,
+      "template_lines": 357,
+      "unique_lines": 336,
       "section_count": 10,
       "sections": [
         "/codex \u2014 Multi-AI Second Opinion",
@@ -394,8 +394,8 @@
       "description_oneline": "CEO/founder-mode plan review. Rethink the problem, find the 10-star product,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 834,
-      "unique_lines": 809,
+      "template_lines": 839,
+      "unique_lines": 814,
       "section_count": 64,
       "sections": [
         "Mega Plan Review Mode",
@@ -472,8 +472,8 @@
       "description_oneline": "Designer's eye plan review \u2014 interactive, like CEO and Eng review.",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 312,
-      "unique_lines": 289,
+      "template_lines": 315,
+      "unique_lines": 292,
       "section_count": 32,
       "sections": [
         "/plan-design-review: Designer's Eye Plan Review",
@@ -518,8 +518,8 @@
       "description_oneline": "Eng manager-mode plan review. Lock in the execution plan \u2014 architecture,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 309,
-      "unique_lines": 285,
+      "template_lines": 312,
+      "unique_lines": 288,
       "section_count": 33,
       "sections": [
         "Plan Review Mode",

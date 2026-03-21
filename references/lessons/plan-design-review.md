@@ -1,6 +1,6 @@
 # Lesson: `/plan-design-review`
 
-> Sprint phase: **Think** | Template: 312 lines | Version: 2.0.0
+> Sprint phase: **Think** | Template: 315 lines | Version: 2.0.0
 > Source: `garrytan/gstack/plan-design-review/SKILL.md.tmpl`
 
 ## What Is This?

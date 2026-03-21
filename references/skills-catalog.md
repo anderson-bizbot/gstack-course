@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 22 skills | Generated: 2026-03-21 19:19 UTC
+> 22 skills | Generated: 2026-03-21 19:59 UTC
 
 ## Quick Reference
 
@@ -9,9 +9,9 @@
 |-------|-------|-------------|-------|---------|
 | Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 370 | 1.0.0 |
 | Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 571 | 2.0.0 |
-| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 834 | 1.0.0 |
-| Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 312 | 2.0.0 |
-| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 309 | 1.0.0 |
+| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 839 | 1.0.0 |
+| Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 315 | 2.0.0 |
+| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 312 | 1.0.0 |
 | Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 263 | 2.0.0 |
 | Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 197 | 1.0.0 |
 | Review | [`/review`](lessons/review.md) | `/review` | 252 | 1.0.0 |
@@ -28,7 +28,7 @@
 | Safety | [`/unfreeze`](lessons/unfreeze.md) | `/unfreeze` | 39 | 0.1.0 |
 | Meta | [`/gstack-upgrade`](lessons/gstack-upgrade.md) | `/gstack-upgrade` | 225 | 1.1.0 |
 | Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 281 | 1.1.0 |
-| Other | [`/codex`](lessons/codex.md) | `/codex` | 354 | 1.0.0 |
+| Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
 
 ## The Sprint Flow
 
