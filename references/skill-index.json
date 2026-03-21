@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-20T23:02:07.839289+00:00",
+  "generated_at": "2026-03-21T02:48:01.515155+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 22,
   "skills": [
@@ -612,8 +612,8 @@
       "description_oneline": "Weekly engineering retrospective. Analyzes commit history, work patterns,",
       "version": "2.0.0",
       "phase": "Ship",
-      "template_lines": 527,
-      "unique_lines": 507,
+      "template_lines": 526,
+      "unique_lines": 506,
       "section_count": 56,
       "sections": [
         "Detect default branch",

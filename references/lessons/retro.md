@@ -1,6 +1,6 @@
 # Lesson: `/retro`
 
-> Sprint phase: **Ship** | Template: 527 lines | Version: 2.0.0
+> Sprint phase: **Ship** | Template: 526 lines | Version: 2.0.0
 > Source: `garrytan/gstack/retro/SKILL.md.tmpl`
 
 ## What Is This?
