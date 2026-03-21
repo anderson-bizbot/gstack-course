@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T02:48:01.515155+00:00",
+  "generated_at": "2026-03-21T16:59:17.949210+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 22,
   "skills": [
@@ -393,9 +393,9 @@
       "description_oneline": "CEO/founder-mode plan review. Rethink the problem, find the 10-star product,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 750,
-      "unique_lines": 726,
-      "section_count": 58,
+      "template_lines": 817,
+      "unique_lines": 793,
+      "section_count": 63,
       "sections": [
         "Mega Plan Review Mode",
         "Philosophy",
@@ -404,6 +404,10 @@
         "Cognitive Patterns \u2014 How Great CEOs Think",
         "Priority Hierarchy Under Context Pressure",
         "PRE-REVIEW SYSTEM AUDIT (before Step 0)",
+        "CEO Review Handoff Note",
+        "Why I paused",
+        "System Audit Summary",
+        "Discussion So Far",
         "Retrospective Check",
         "Frontend/UI Scope Detection",
         "Taste Calibration (EXPANSION and SELECTIVE EXPANSION modes)",
@@ -450,6 +454,7 @@
         "Stale Diagram Audit",
         "Completion Summary",
         "Unresolved Decisions",
+        "Handoff Note Cleanup",
         "Review Log",
         "Next Steps \u2014 Review Chaining",
         "docs/designs Promotion (EXPANSION and SELECTIVE EXPANSION only)",
