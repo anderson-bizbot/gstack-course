@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-21T19:59:49.807331+00:00",
+  "generated_at": "2026-03-21T21:40:04.557756+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
-  "skill_count": 22,
+  "skill_count": 26,
   "skills": [
     {
       "dir_name": "gstack",
@@ -66,6 +66,35 @@
       ]
     },
     {
+      "dir_name": "benchmark",
+      "name": "benchmark",
+      "slash": "/benchmark",
+      "description": "Performance regression detection using the browse daemon. Establishes\nbaselines for page load times, Core Web Vitals, and resource sizes.\nCompares before/after on every PR. Tracks performance trends over time.\nUse when: \"performance\", \"benchmark\", \"page speed\", \"lighthouse\", \"web vitals\",\n\"bundle size\", \"load time\".",
+      "description_oneline": "Performance regression detection using the browse daemon. Establishes",
+      "version": "1.0.0",
+      "phase": "Other",
+      "template_lines": 234,
+      "unique_lines": 212,
+      "section_count": 15,
+      "sections": [
+        "/benchmark \u2014 Performance Regression Detection",
+        "User-invocable",
+        "Arguments",
+        "Instructions",
+        "Phase 1: Setup",
+        "Phase 2: Page Discovery",
+        "Phase 3: Performance Data Collection",
+        "Phase 4: Baseline Capture (--baseline mode)",
+        "Phase 5: Comparison",
+        "Phase 6: Slowest Resources",
+        "Resource                  Type      Size      Duration",
+        "Phase 7: Performance Budget",
+        "Phase 8: Trend Analysis (--trend mode)",
+        "Phase 9: Save Report",
+        "Important Rules"
+      ]
+    },
+    {
       "dir_name": "browse",
       "name": "browse",
       "slash": "/browse",
@@ -98,6 +127,32 @@
         "3. When user says \"done\", re-snapshot and continue",
         "Snapshot Flags",
         "Full Command List"
+      ]
+    },
+    {
+      "dir_name": "canary",
+      "name": "canary",
+      "slash": "/canary",
+      "description": "Post-deploy canary monitoring. Watches the live app for console errors,\nperformance regressions, and page failures using the browse daemon. Takes\nperiodic screenshots, compares against pre-deploy baselines, and alerts\non anomalies. Use when: \"monitor deploy\", \"canary\", \"post-deploy check\",\n\"watch production\", \"verify deploy\".",
+      "description_oneline": "Post-deploy canary monitoring. Watches the live app for console errors,",
+      "version": "1.0.0",
+      "phase": "Other",
+      "template_lines": 221,
+      "unique_lines": 199,
+      "section_count": 12,
+      "sections": [
+        "/canary \u2014 Post-Deploy Visual Monitor",
+        "User-invocable",
+        "Arguments",
+        "Instructions",
+        "Phase 1: Setup",
+        "Phase 2: Baseline Capture (--baseline mode)",
+        "Phase 3: Page Discovery",
+        "Phase 4: Pre-Deploy Snapshot (if no baseline exists)",
+        "Phase 5: Continuous Monitoring Loop",
+        "Phase 6: Health Report",
+        "Phase 7: Baseline Update",
+        "Important Rules"
       ]
     },
     {
@@ -316,6 +371,40 @@
         "Phase 3: Hypothesis Testing",
         "Phase 4: Implementation",
         "Phase 5: Verification & Report",
+        "Important Rules"
+      ]
+    },
+    {
+      "dir_name": "land-and-deploy",
+      "name": "land-and-deploy",
+      "slash": "/land-and-deploy",
+      "description": "Land and deploy workflow. Merges the PR, waits for CI and deploy,\nverifies production health via canary checks. Takes over after /ship\ncreates the PR. Use when: \"merge\", \"land\", \"deploy\", \"merge and verify\",\n\"land it\", \"ship it to production\".",
+      "description_oneline": "Land and deploy workflow. Merges the PR, waits for CI and deploy,",
+      "version": "1.0.0",
+      "phase": "Other",
+      "template_lines": 403,
+      "unique_lines": 382,
+      "section_count": 20,
+      "sections": [
+        "/land-and-deploy \u2014 Merge, Deploy, Verify",
+        "User-invocable",
+        "Arguments",
+        "Non-interactive philosophy (like /ship)",
+        "Step 1: Pre-flight",
+        "Step 2: Pre-merge checks",
+        "Step 3: Wait for CI (if pending)",
+        "Step 4: Merge the PR",
+        "Step 5: Deploy strategy detection",
+        "Step 6: Wait for deploy (if applicable)",
+        "Strategy A: GitHub Actions workflow",
+        "Strategy B: Platform CLI (Fly.io, Render, Heroku)",
+        "Strategy C: Auto-deploy platforms (Vercel, Netlify)",
+        "Strategy D: Custom deploy hooks",
+        "Common: Timing and failure handling",
+        "Step 7: Canary verification (conditional depth)",
+        "Step 8: Revert (if needed)",
+        "Step 9: Deploy report",
+        "Step 10: Suggest follow-ups",
         "Important Rules"
       ]
     },
@@ -733,6 +822,35 @@
         "3. Direct import (alternative)",
         "4. Verify",
         "Notes"
+      ]
+    },
+    {
+      "dir_name": "setup-deploy",
+      "name": "setup-deploy",
+      "slash": "/setup-deploy",
+      "description": "Configure deployment settings for /land-and-deploy. Detects your deploy\nplatform (Fly.io, Render, Vercel, Netlify, Heroku, GitHub Actions, custom),\nproduction URL, health check endpoints, and deploy status commands. Writes\nthe configuration to CLAUDE.md so all future deploys are automatic.\nUse when: \"setup deploy\", \"configure deployment\", \"set up land-and-deploy\",\n\"how do I deploy with gstack\", \"add deploy config\".",
+      "description_oneline": "Configure deployment settings for /land-and-deploy. Detects your deploy",
+      "version": "1.0.0",
+      "phase": "Other",
+      "template_lines": 221,
+      "unique_lines": 198,
+      "section_count": 15,
+      "sections": [
+        "/setup-deploy \u2014 Configure Deployment for gstack",
+        "User-invocable",
+        "Instructions",
+        "Step 1: Check existing configuration",
+        "Step 2: Detect platform",
+        "Platform config files",
+        "GitHub Actions deploy workflows",
+        "Project type",
+        "Step 3: Platform-specific setup",
+        "Step 4: Write configuration",
+        "Deploy Configuration (configured by /setup-deploy)",
+        "Custom deploy hooks",
+        "Step 5: Verify",
+        "Step 6: Summary",
+        "Important Rules"
       ]
     },
     {

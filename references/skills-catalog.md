@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 22 skills | Generated: 2026-03-21 19:59 UTC
+> 26 skills | Generated: 2026-03-21 21:40 UTC
 
 ## Quick Reference
 
@@ -28,7 +28,11 @@
 | Safety | [`/unfreeze`](lessons/unfreeze.md) | `/unfreeze` | 39 | 0.1.0 |
 | Meta | [`/gstack-upgrade`](lessons/gstack-upgrade.md) | `/gstack-upgrade` | 225 | 1.1.0 |
 | Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 281 | 1.1.0 |
+| Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 234 | 1.0.0 |
+| Other | [`/canary`](lessons/canary.md) | `/canary` | 221 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
+| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 403 | 1.0.0 |
+| Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 221 | 1.0.0 |
 
 ## The Sprint Flow
 
@@ -85,4 +89,8 @@ SAFETY: /careful → /freeze → /guard → /unfreeze
 ### Other
 
 - [`/gstack`](lessons/gstack.md) — Fast headless browser for QA testing and site dogfooding. Navigate any URL, inte
+- [`/benchmark`](lessons/benchmark.md) — Performance regression detection using the browse daemon. Establishes
+- [`/canary`](lessons/canary.md) — Post-deploy canary monitoring. Watches the live app for console errors,
 - [`/codex`](lessons/codex.md) — OpenAI Codex CLI wrapper — three modes. Code review: independent diff review via
+- [`/land-and-deploy`](lessons/land-and-deploy.md) — Land and deploy workflow. Merges the PR, waits for CI and deploy,
+- [`/setup-deploy`](lessons/setup-deploy.md) — Configure deployment settings for /land-and-deploy. Detects your deploy
