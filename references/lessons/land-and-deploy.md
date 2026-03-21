@@ -1,6 +1,6 @@
 # Lesson: `/land-and-deploy`
 
-> Sprint phase: **Other** | Template: 403 lines | Version: 1.0.0
+> Sprint phase: **Other** | Template: 576 lines | Version: 1.0.0
 > Source: `garrytan/gstack/land-and-deploy/SKILL.md.tmpl`
 
 ## What Is This?
@@ -32,7 +32,9 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 ## What Do You Get?
 
-- Non-interactive philosophy (like /ship)
+- Non-interactive philosophy (like /ship) — with one critical gate
+- 3.5b: Test results
+- 3.5e: Readiness report and confirmation
 - Step 9: Deploy report
 
 ## The Workflow
@@ -45,8 +47,8 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 **Step 3: Arguments**
 
-**Step 4: Non-interactive philosophy (like /ship)**
-> This is a **non-interactive, fully automated** workflow. Do NOT ask for confirmation at any step except the ones listed below. The user said `/land-and-deploy` which means DO IT.
+**Step 4: Non-interactive philosophy (like /ship) — with one critical gate**
+> This is a **mostly automated** workflow. Do NOT ask for confirmation at any step except
 
 **Step 5: Step 1: Pre-flight**
 > 1. Check GitHub CLI authentication:
@@ -57,28 +59,31 @@ This skill runs mostly automatically — you provide initial context and Claude 
 **Step 7: Step 3: Wait for CI (if pending)**
 > If required checks are still pending, wait for them to complete. Use a timeout of 15 minutes:
 
-**Step 8: Step 4: Merge the PR**
+**Step 8: Step 3.5: Pre-merge readiness gate**
+> **This is the critical safety check before an irreversible merge.** The merge cannot
+
+**Step 9: Step 4: Merge the PR**
 > Record the start timestamp for timing data.
 
-**Step 9: Step 5: Deploy strategy detection**
+**Step 10: Step 5: Deploy strategy detection**
 > Determine what kind of project this is and how to verify the deploy.
 
-**Step 10: Step 6: Wait for deploy (if applicable)**
+**Step 11: Step 6: Wait for deploy (if applicable)**
 > The deploy verification strategy depends on the platform detected in Step 5.
 
-**Step 11: Step 7: Canary verification (conditional depth)**
+**Step 12: Step 7: Canary verification (conditional depth)**
 > Use the diff-scope classification from Step 5 to determine canary depth:
 
-**Step 12: Step 8: Revert (if needed)**
+**Step 13: Step 8: Revert (if needed)**
 > If the user chose to revert at any point:
 
-**Step 13: Step 9: Deploy report**
+**Step 14: Step 9: Deploy report**
 > Create the deploy report directory:
 
-**Step 14: Step 10: Suggest follow-ups**
+**Step 15: Step 10: Suggest follow-ups**
 > After the deploy report, suggest relevant follow-ups:
 
-**Step 15: Important Rules**
+**Step 16: Important Rules**
 
 ## Where It Fits
 

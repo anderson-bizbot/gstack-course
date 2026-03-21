@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 26 skills | Generated: 2026-03-21 21:40 UTC
+> 26 skills | Generated: 2026-03-21 22:00 UTC
 
 ## Quick Reference
 
@@ -31,7 +31,7 @@
 | Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 234 | 1.0.0 |
 | Other | [`/canary`](lessons/canary.md) | `/canary` | 221 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
-| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 403 | 1.0.0 |
+| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 576 | 1.0.0 |
 | Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 221 | 1.0.0 |
 
 ## The Sprint Flow
