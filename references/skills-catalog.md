@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 22 skills | Generated: 2026-03-21 18:49 UTC
+> 22 skills | Generated: 2026-03-21 19:19 UTC
 
 ## Quick Reference
 
@@ -14,14 +14,14 @@
 | Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 309 | 1.0.0 |
 | Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 263 | 2.0.0 |
 | Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 197 | 1.0.0 |
-| Review | [`/review`](lessons/review.md) | `/review` | 251 | 1.0.0 |
+| Review | [`/review`](lessons/review.md) | `/review` | 252 | 1.0.0 |
 | Test | [`/browse`](lessons/browse.md) | `/browse` | 142 | 1.1.0 |
 | Test | [`/qa`](lessons/qa.md) | `/qa` | 317 | 2.0.0 |
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 102 | 1.0.0 |
 | Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 75 | 1.0.0 |
 | Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 358 | 1.0.0 |
 | Ship | [`/retro`](lessons/retro.md) | `/retro` | 540 | 2.0.0 |
-| Ship | [`/ship`](lessons/ship.md) | `/ship` | 656 | 1.0.0 |
+| Ship | [`/ship`](lessons/ship.md) | `/ship` | 657 | 1.0.0 |
 | Safety | [`/careful`](lessons/careful.md) | `/careful` | 58 | 0.1.0 |
 | Safety | [`/freeze`](lessons/freeze.md) | `/freeze` | 81 | 0.1.0 |
 | Safety | [`/guard`](lessons/guard.md) | `/guard` | 81 | 0.1.0 |

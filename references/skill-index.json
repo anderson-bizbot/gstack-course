@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T18:49:32.114186+00:00",
+  "generated_at": "2026-03-21T19:19:40.722379+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 22,
   "skills": [
@@ -689,7 +689,7 @@
       "description_oneline": "Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust",
       "version": "1.0.0",
       "phase": "Review",
-      "template_lines": 251,
+      "template_lines": 252,
       "unique_lines": 229,
       "section_count": 18,
       "sections": [
@@ -743,7 +743,7 @@
       "description_oneline": "Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. Use when asked to \"ship\", \"deploy\", \"push to main\", \"create a PR\", or \"merge",
       "version": "1.0.0",
       "phase": "Ship",
-      "template_lines": 656,
+      "template_lines": 657,
       "unique_lines": 636,
       "section_count": 28,
       "sections": [
