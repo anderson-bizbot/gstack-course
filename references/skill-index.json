@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-03-22T00:00:27.152344+00:00",
+  "generated_at": "2026-03-22T17:21:58.826975+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
-  "skill_count": 26,
+  "skill_count": 27,
   "skills": [
     {
       "dir_name": "gstack",
       "name": "gstack",
       "slash": "/gstack",
-      "description": "Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with\nelements, verify page state, diff before/after actions, take annotated screenshots, check\nresponsive layouts, test forms and uploads, handle dialogs, and assert element states.\n~100ms per command. Use when you need to test a feature, verify a deployment, dogfood a\nuser flow, or file a bug with evidence.\n\ngstack also includes development workflow skills. When you notice the user is at\nthese stages, suggest the appropriate skill:\n- Brainstorming a new idea \u2192 suggest /office-hours\n- Reviewing a plan (strategy) \u2192 suggest /plan-ceo-review\n- Reviewing a plan (architecture) \u2192 suggest /plan-eng-review\n- Reviewing a plan (design) \u2192 suggest /plan-design-review\n- Creating a design system \u2192 suggest /design-consultation\n- Debugging errors \u2192 suggest /investigate\n- Testing the app \u2192 suggest /qa\n- Code review before merge \u2192 suggest /review\n- Visual design audit \u2192 suggest /design-review\n- Ready to deploy / create PR \u2192 suggest /ship\n- Post-ship doc updates \u2192 suggest /document-release\n- Weekly retrospective \u2192 suggest /retro\n- Wanting a second opinion or adversarial code review \u2192 suggest /codex\n- Working with production or live systems \u2192 suggest /careful\n- Want to scope edits to one module/directory \u2192 suggest /freeze\n- Maximum safety mode (destructive warnings + edit restrictions) \u2192 suggest /guard\n- Removing edit restrictions \u2192 suggest /unfreeze\n- Upgrading gstack to latest version \u2192 suggest /gstack-upgrade\n\nIf the user pushes back on skill suggestions (\"stop suggesting things\",\n\"I don't need suggestions\", \"too aggressive\"):\n1. Stop suggesting for the rest of this session\n2. Run: gstack-config set proactive false\n3. Say: \"Got it \u2014 I'll stop suggesting skills. Just tell me to be proactive\n   again if you change your mind.\"\n\nIf the user says \"be proactive again\" or \"turn on suggestions\":\n1. Run: gstack-config set proactive true\n2. Say: \"Proactive suggestions are back on.\"",
+      "description": "Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with\nelements, verify page state, diff before/after actions, take annotated screenshots, check\nresponsive layouts, test forms and uploads, handle dialogs, and assert element states.\n~100ms per command. Use when you need to test a feature, verify a deployment, dogfood a\nuser flow, or file a bug with evidence.\n\ngstack also includes development workflow skills. When you notice the user is at\nthese stages, suggest the appropriate skill:\n- Brainstorming a new idea \u2192 suggest /office-hours\n- Reviewing a plan (strategy) \u2192 suggest /plan-ceo-review\n- Reviewing a plan (architecture) \u2192 suggest /plan-eng-review\n- Reviewing a plan (design) \u2192 suggest /plan-design-review\n- Auto-reviewing a plan (all reviews at once) \u2192 suggest /autoplan\n- Creating a design system \u2192 suggest /design-consultation\n- Debugging errors \u2192 suggest /investigate\n- Testing the app \u2192 suggest /qa\n- Code review before merge \u2192 suggest /review\n- Visual design audit \u2192 suggest /design-review\n- Ready to deploy / create PR \u2192 suggest /ship\n- Post-ship doc updates \u2192 suggest /document-release\n- Weekly retrospective \u2192 suggest /retro\n- Wanting a second opinion or adversarial code review \u2192 suggest /codex\n- Working with production or live systems \u2192 suggest /careful\n- Want to scope edits to one module/directory \u2192 suggest /freeze\n- Maximum safety mode (destructive warnings + edit restrictions) \u2192 suggest /guard\n- Removing edit restrictions \u2192 suggest /unfreeze\n- Upgrading gstack to latest version \u2192 suggest /gstack-upgrade\n\nIf the user pushes back on skill suggestions (\"stop suggesting things\",\n\"I don't need suggestions\", \"too aggressive\"):\n1. Stop suggesting for the rest of this session\n2. Run: gstack-config set proactive false\n3. Say: \"Got it \u2014 I'll stop suggesting skills. Just tell me to be proactive\n   again if you change your mind.\"\n\nIf the user says \"be proactive again\" or \"turn on suggestions\":\n1. Run: gstack-config set proactive true\n2. Say: \"Proactive suggestions are back on.\"",
       "description_oneline": "Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with",
       "version": "1.1.0",
       "phase": "Other",
-      "template_lines": 281,
+      "template_lines": 282,
       "unique_lines": 229,
       "section_count": 48,
       "sections": [
@@ -63,6 +63,45 @@
         "Snapshot System",
         "Command Reference",
         "Tips"
+      ]
+    },
+    {
+      "dir_name": "autoplan",
+      "name": "autoplan",
+      "slash": "/autoplan",
+      "description": "Auto-review pipeline \u2014 reads the full CEO, design, and eng review skills from disk\nand runs them sequentially with auto-decisions using 6 decision principles. Surfaces\ntaste decisions (close approaches, borderline scope, codex disagreements) at a final\napproval gate. One command, fully reviewed plan out.\nUse when asked to \"auto review\", \"autoplan\", \"run all reviews\", \"review this plan\nautomatically\", or \"make the decisions for me\".\nProactively suggest when the user has a plan file and wants to run the full review\ngauntlet without answering 15-30 intermediate questions.",
+      "description_oneline": "Auto-review pipeline \u2014 reads the full CEO, design, and eng review skills from disk",
+      "version": "1.0.0",
+      "phase": "Other",
+      "template_lines": 289,
+      "unique_lines": 262,
+      "section_count": 25,
+      "sections": [
+        "/autoplan \u2014 Auto-Review Pipeline",
+        "The 6 Decision Principles",
+        "Decision Classification",
+        "Phase 0: Intake + Restore Point",
+        "Step 1: Capture restore point",
+        "/autoplan Restore Point",
+        "Re-run Instructions",
+        "Original Plan State",
+        "Step 2: Read context",
+        "Step 3: Load skill files from disk",
+        "Phase 1: CEO Review (Strategy & Scope)",
+        "Phase 2: Design Review (conditional \u2014 skip if no UI scope)",
+        "Phase 3: Eng Review + Codex",
+        "Decision Audit Trail",
+        "Decision Audit Trail",
+        "Phase 4: Final Approval Gate",
+        "/autoplan Review Complete",
+        "Plan Summary",
+        "Decisions Made: [N] total ([M] auto-decided, [K] choices for you)",
+        "Your Choices (taste decisions)",
+        "Auto-Decided: [M] decisions [see Decision Audit Trail in plan file]",
+        "Review Scores",
+        "Deferred to TODOS.md",
+        "Completion: Write Review Logs",
+        "Important Rules"
       ]
     },
     {

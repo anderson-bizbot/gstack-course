@@ -1,6 +1,6 @@
 # Lesson: `/gstack`
 
-> Sprint phase: **Other** | Template: 281 lines | Version: 1.1.0
+> Sprint phase: **Other** | Template: 282 lines | Version: 1.1.0
 > Source: `garrytan/gstack/gstack/SKILL.md.tmpl`
 
 ## What Is This?
@@ -16,6 +16,7 @@ these stages, suggest the appropriate skill:
 - Reviewing a plan (strategy) → suggest /plan-ceo-review
 - Reviewing a plan (architecture) → suggest /plan-eng-review
 - Reviewing a plan (design) → suggest /plan-design-review
+- Auto-reviewing a plan (all reviews at once) → suggest /autoplan
 - Creating a design system → suggest /design-consultation
 - Debugging errors → suggest /investigate
 - Testing the app → suggest /qa

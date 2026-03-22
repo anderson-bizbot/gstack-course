@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 26 skills | Generated: 2026-03-22 00:00 UTC
+> 27 skills | Generated: 2026-03-22 17:21 UTC
 
 ## Quick Reference
 
@@ -27,7 +27,8 @@
 | Safety | [`/guard`](lessons/guard.md) | `/guard` | 81 | 0.1.0 |
 | Safety | [`/unfreeze`](lessons/unfreeze.md) | `/unfreeze` | 39 | 0.1.0 |
 | Meta | [`/gstack-upgrade`](lessons/gstack-upgrade.md) | `/gstack-upgrade` | 225 | 1.1.0 |
-| Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 281 | 1.1.0 |
+| Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 282 | 1.1.0 |
+| Other | [`/autoplan`](lessons/autoplan.md) | `/autoplan` | 289 | 1.0.0 |
 | Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 234 | 1.0.0 |
 | Other | [`/canary`](lessons/canary.md) | `/canary` | 221 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
@@ -89,6 +90,7 @@ SAFETY: /careful → /freeze → /guard → /unfreeze
 ### Other
 
 - [`/gstack`](lessons/gstack.md) — Fast headless browser for QA testing and site dogfooding. Navigate any URL, inte
+- [`/autoplan`](lessons/autoplan.md) — Auto-review pipeline — reads the full CEO, design, and eng review skills from di
 - [`/benchmark`](lessons/benchmark.md) — Performance regression detection using the browse daemon. Establishes
 - [`/canary`](lessons/canary.md) — Post-deploy canary monitoring. Watches the live app for console errors,
 - [`/codex`](lessons/codex.md) — OpenAI Codex CLI wrapper — three modes. Code review: independent diff review via
