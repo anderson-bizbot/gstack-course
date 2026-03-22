@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-22 20:22 UTC
+> 28 skills | Generated: 2026-03-22 21:02 UTC
 
 ## Quick Reference
 
@@ -20,7 +20,7 @@
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 102 | 1.0.0 |
 | Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 75 | 1.0.0 |
 | Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 358 | 1.0.0 |
-| Ship | [`/retro`](lessons/retro.md) | `/retro` | 540 | 2.0.0 |
+| Ship | [`/retro`](lessons/retro.md) | `/retro` | 834 | 2.0.0 |
 | Ship | [`/ship`](lessons/ship.md) | `/ship` | 529 | 1.0.0 |
 | Safety | [`/careful`](lessons/careful.md) | `/careful` | 58 | 0.1.0 |
 | Safety | [`/freeze`](lessons/freeze.md) | `/freeze` | 81 | 0.1.0 |

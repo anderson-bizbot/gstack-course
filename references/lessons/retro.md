@@ -1,6 +1,6 @@
 # Lesson: `/retro`
 
-> Sprint phase: **Ship** | Template: 540 lines | Version: 2.0.0
+> Sprint phase: **Ship** | Template: 834 lines | Version: 2.0.0
 > Source: `garrytan/gstack/retro/SKILL.md.tmpl`
 
 ## What Is This?
@@ -31,6 +31,8 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 - Step 8: Focus Score + Ship of the Week
 - Shipping Velocity
+- Global Step 4: Compute global shipping streak
+- Ship of the Week (Global)
 
 ## The Workflow
 
@@ -108,12 +110,33 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 **Step 26: Engineering Retro: [date range]**
 
-**Step 27: Compare Mode**
+**Step 27: Global Retrospective Mode**
+> When the user runs `/retro global` (or `/retro global 14d`), follow this flow instead of the repo-scoped Steps 1-14. This mode works from any directory — it does NOT require being inside a git repo.
+
+**Step 28: Commits with stats**
+> git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%H|%aN|%ai|%s" --shortstat
+
+**Step 29: Commit timestamps for session detection, streak, and context switching**
+> git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%at|%aN|%ai|%s" | sort -n
+
+**Step 30: Per-author commit counts**
+> git -C <path> shortlog origin/$DEFAULT --since="<start_date>T00:00:00" -sn --no-merges
+
+**Step 31: PR numbers from commit messages**
+> git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%s" | grep -oE '#[0-9]+' | sort -n | uniq
+
+**Step 32: 🚀 Your Week: [user name] — [date range]**
+> This section is the **shareable personal card**. It contains ONLY the current user's
+
+**Step 33: Global Engineering Retro: [date range]**
+> Everything below is the full analysis — team data, project breakdowns, patterns.
+
+**Step 34: Compare Mode**
 > When the user runs `/retro compare` (or `/retro compare 14d`):
 
-**Step 28: Tone**
+**Step 35: Tone**
 
-**Step 29: Important Rules**
+**Step 36: Important Rules**
 
 ## Where It Fits
 
