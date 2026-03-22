@@ -1,6 +1,6 @@
 # Lesson: `/ship`
 
-> Sprint phase: **Ship** | Template: 657 lines | Version: 1.0.0
+> Sprint phase: **Ship** | Template: 529 lines | Version: 1.0.0
 > Source: `garrytan/gstack/ship/SKILL.md.tmpl`
 
 ## What Is This?
@@ -56,69 +56,63 @@ Claude walks you through a structured conversation:
 > Evals are mandatory when prompt-related files change. Skip this step entirely if no prompt files are in the diff.
 
 **Step 7: Step 3.4: Test Coverage Audit**
-> 100% coverage is the goal — every untested path is a path where bugs hide and vibe coding becomes yolo coding. Evaluate what was ACTUALLY coded (from the diff), not what was planned.
+> {{TEST_COVERAGE_AUDIT_SHIP}}
 
-**Step 8: Count test files before any generation**
-> find . -name '*.test.*' -o -name '*.spec.*' -o -name '*_test.*' -o -name '*_spec.*' | grep -v node_modules | wc -l
-
-**Step 9: Count test files after generation**
-> find . -name '*.test.*' -o -name '*.spec.*' -o -name '*_test.*' -o -name '*_spec.*' | grep -v node_modules | wc -l
-
-**Step 10: Step 3.5: Pre-Landing Review**
+**Step 8: Step 3.5: Pre-Landing Review**
 > Review the diff for structural issues that tests don't catch.
 
-**Step 11: Step 3.75: Address Greptile review comments (if PR exists)**
+**Step 9: Step 3.75: Address Greptile review comments (if PR exists)**
 > Read `.claude/skills/review/greptile-triage.md` and follow the fetch, filter, classify, and **escalation detection** steps.
 
-**Step 12: Step 4: Version bump (auto-decide)**
+**Step 10: Step 4: Version bump (auto-decide)**
 > 1. Read the current `VERSION` file (4-digit format: `MAJOR.MINOR.PATCH.MICRO`)
 
-**Step 13: Step 5: CHANGELOG (auto-generate)**
+**Step 11: Step 5: CHANGELOG (auto-generate)**
 > 1. Read `CHANGELOG.md` header to know the format.
 
-**Step 14: Step 5.5: TODOS.md (auto-update)**
+**Step 12: Step 5.5: TODOS.md (auto-update)**
 > Cross-reference the project's TODOS.md against the changes being shipped. Mark completed items automatically; prompt only if the file is missing or disorganized.
 
-**Step 15: Step 6: Commit (bisectable chunks)**
+**Step 13: Step 6: Commit (bisectable chunks)**
 > **Goal:** Create small, logical commits that work well with `git bisect` and help LLMs understand what changed.
 
-**Step 16: Step 6.5: Verification Gate**
+**Step 14: Step 6.5: Verification Gate**
 > **IRON LAW: NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE.**
 
-**Step 17: Step 7: Push**
+**Step 15: Step 7: Push**
 > Push to the remote with upstream tracking:
 
-**Step 18: Step 8: Create PR**
+**Step 16: Step 8: Create PR**
 > Create a pull request using `gh`:
 
-**Step 19: Summary**
+**Step 17: Summary**
 > <bullet points from CHANGELOG>
 
-**Step 20: Test Coverage**
+**Step 18: Test Coverage**
 > <coverage diagram from Step 3.4, or "All new code paths have test coverage.">
 
-**Step 21: Pre-Landing Review**
+**Step 19: Pre-Landing Review**
 > <findings from Step 3.5 code review, or "No issues found.">
 
-**Step 22: Design Review**
+**Step 20: Design Review**
 > <If design review ran: "Design Review (lite): N findings — M auto-fixed, K skipped. AI Slop: clean/N issues.">
 
-**Step 23: Eval Results**
+**Step 21: Eval Results**
 > <If evals ran: suite names, pass/fail counts, cost dashboard summary. If skipped: "No prompt-related files changed — evals skipped.">
 
-**Step 24: Greptile Review**
+**Step 22: Greptile Review**
 > <If Greptile comments were found: bullet list with [FIXED] / [FALSE POSITIVE] / [ALREADY FIXED] tag + one-line summary per comment>
 
-**Step 25: TODOS**
+**Step 23: TODOS**
 > <If items marked complete: bullet list of completed items with version>
 
-**Step 26: Test plan**
+**Step 24: Test plan**
 > 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-**Step 27: Step 8.5: Auto-invoke /document-release**
+**Step 25: Step 8.5: Auto-invoke /document-release**
 > After the PR is created, automatically sync project documentation. Read the
 
-**Step 28: Important Rules**
+**Step 26: Important Rules**
 
 ## Where It Fits
 

@@ -1,6 +1,6 @@
 # Lesson: `/review`
 
-> Sprint phase: **Review** | Template: 252 lines | Version: 1.0.0
+> Sprint phase: **Review** | Template: 260 lines | Version: 1.0.0
 > Source: `garrytan/gstack/review/SKILL.md.tmpl`
 
 ## What Is This?
@@ -58,16 +58,19 @@ Structured output for the **Review** phase of your sprint.
 **Step 8: Step 4.5: Design Review (conditional)**
 > {{DESIGN_REVIEW_LITE}}
 
-**Step 9: Step 5: Fix-First Review**
+**Step 9: Step 4.75: Test Coverage Diagram**
+> {{TEST_COVERAGE_AUDIT_REVIEW}}
+
+**Step 10: Step 5: Fix-First Review**
 > **Every finding gets action — not just critical ones.**
 
-**Step 10: Step 5.5: TODOS cross-reference**
+**Step 11: Step 5.5: TODOS cross-reference**
 > Read `TODOS.md` in the repository root (if it exists). Cross-reference the PR against open TODOs:
 
-**Step 11: Step 5.6: Documentation staleness check**
+**Step 12: Step 5.6: Documentation staleness check**
 > Cross-reference the diff against documentation files. For each `.md` file in the repo root (README.md, ARCHITECTURE.md, CONTRIBUTING.md, CLAUDE.md, etc.):
 
-**Step 12: Important Rules**
+**Step 13: Important Rules**
 
 ## Where It Fits
 
