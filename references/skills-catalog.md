@@ -1,14 +1,14 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 26 skills | Generated: 2026-03-21 22:00 UTC
+> 26 skills | Generated: 2026-03-22 00:00 UTC
 
 ## Quick Reference
 
 | Phase | Skill | What You Say | Lines | Version |
 |-------|-------|-------------|-------|---------|
 | Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 370 | 1.0.0 |
-| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 571 | 2.0.0 |
+| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 625 | 2.0.0 |
 | Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 839 | 1.0.0 |
 | Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 315 | 2.0.0 |
 | Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 312 | 1.0.0 |

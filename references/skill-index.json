@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-21T22:00:12.598358+00:00",
+  "generated_at": "2026-03-22T00:00:27.152344+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 26,
   "skills": [
@@ -422,15 +422,17 @@
       "description_oneline": "YC Office Hours \u2014 two modes. Startup mode: six forcing questions that expose",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 571,
-      "unique_lines": 542,
-      "section_count": 53,
+      "template_lines": 625,
+      "unique_lines": 596,
+      "section_count": 55,
       "sections": [
         "YC Office Hours",
         "Phase 1: Context Gathering",
         "Phase 2A: Startup Mode \u2014 YC Product Diagnostic",
         "Operating Principles",
         "Response Posture",
+        "Anti-Sycophancy Rules",
+        "Pushback Patterns \u2014 How to Push",
         "The Six Forcing Questions",
         "Phase 2B: Builder Mode \u2014 Design Partner",
         "Operating Principles",

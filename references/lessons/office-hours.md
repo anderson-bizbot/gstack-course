@@ -1,6 +1,6 @@
 # Lesson: `/office-hours`
 
-> Sprint phase: **Think** | Template: 571 lines | Version: 2.0.0
+> Sprint phase: **Think** | Template: 625 lines | Version: 2.0.0
 > Source: `garrytan/gstack/office-hours/SKILL.md.tmpl`
 
 ## What Is This?
@@ -42,7 +42,7 @@ Claude walks you through a structured conversation:
 - *"Have you actually sat down and watched someone use this without helping them? What did they do that surprised you?"*
 - *"If the world looks meaningfully different in 3 years — and it will — does your product become more essential or less?"*
 - *"You said 'enterprises in healthcare.' Can you name one specific person at one specific company?"*
-- *"What if the user didn't have to do anything at all to get value? No login, no integration, no setup. What would that look like?"*
+- *"That's encouraging! Who specifically have you talked to?"*
 
 ## What Do You Get?
 
