@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T18:32:10.256604+00:00",
+  "generated_at": "2026-03-22T19:22:20.450132+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 27,
   "skills": [
@@ -73,13 +73,14 @@
       "description_oneline": "Auto-review pipeline \u2014 reads the full CEO, design, and eng review skills from disk",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 289,
-      "unique_lines": 262,
-      "section_count": 25,
+      "template_lines": 417,
+      "unique_lines": 390,
+      "section_count": 27,
       "sections": [
         "/autoplan \u2014 Auto-Review Pipeline",
         "The 6 Decision Principles",
         "Decision Classification",
+        "What \"Auto-Decide\" Means",
         "Phase 0: Intake + Restore Point",
         "Step 1: Capture restore point",
         "/autoplan Restore Point",
@@ -92,6 +93,7 @@
         "Phase 3: Eng Review + Codex",
         "Decision Audit Trail",
         "Decision Audit Trail",
+        "Pre-Gate Verification",
         "Phase 4: Final Approval Gate",
         "/autoplan Review Complete",
         "Plan Summary",

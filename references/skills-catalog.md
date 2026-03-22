@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 27 skills | Generated: 2026-03-22 18:32 UTC
+> 27 skills | Generated: 2026-03-22 19:22 UTC
 
 ## Quick Reference
 
@@ -28,7 +28,7 @@
 | Safety | [`/unfreeze`](lessons/unfreeze.md) | `/unfreeze` | 39 | 0.1.0 |
 | Meta | [`/gstack-upgrade`](lessons/gstack-upgrade.md) | `/gstack-upgrade` | 225 | 1.1.0 |
 | Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 282 | 1.1.0 |
-| Other | [`/autoplan`](lessons/autoplan.md) | `/autoplan` | 289 | 1.0.0 |
+| Other | [`/autoplan`](lessons/autoplan.md) | `/autoplan` | 417 | 1.0.0 |
 | Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 234 | 1.0.0 |
 | Other | [`/canary`](lessons/canary.md) | `/canary` | 221 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
