@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T03:23:26.860160+00:00",
+  "generated_at": "2026-03-23T03:53:34.728242+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -513,9 +513,9 @@
       "description_oneline": "YC Office Hours \u2014 two modes. Startup mode: six forcing questions that expose",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 625,
-      "unique_lines": 596,
-      "section_count": 55,
+      "template_lines": 637,
+      "unique_lines": 608,
+      "section_count": 57,
       "sections": [
         "YC Office Hours",
         "Phase 1: Context Gathering",
@@ -543,6 +543,7 @@
         "Target User & Narrowest Wedge",
         "Constraints",
         "Premises",
+        "Cross-Model Perspective",
         "Approaches Considered",
         "Approach A: {name}",
         "Approach B: {name}",
@@ -558,6 +559,7 @@
         "What Makes This Cool",
         "Constraints",
         "Premises",
+        "Cross-Model Perspective",
         "Approaches Considered",
         "Approach A: {name}",
         "Approach B: {name}",
