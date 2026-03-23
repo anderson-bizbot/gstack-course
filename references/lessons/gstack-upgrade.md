@@ -1,6 +1,6 @@
 # Lesson: `/gstack-upgrade`
 
-> Sprint phase: **Meta** | Template: 225 lines | Version: 1.1.0
+> Sprint phase: **Meta** | Template: 231 lines | Version: 1.1.0
 > Source: `garrytan/gstack/gstack-upgrade/SKILL.md.tmpl`
 
 ## What Is This?
