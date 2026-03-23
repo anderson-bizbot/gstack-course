@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-23 04:03 UTC
+> 28 skills | Generated: 2026-03-23 04:13 UTC
 
 ## Quick Reference
 
@@ -9,7 +9,7 @@
 |-------|-------|-------------|-------|---------|
 | Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 372 | 1.0.0 |
 | Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 637 | 2.0.0 |
-| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 839 | 1.0.0 |
+| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 806 | 1.0.0 |
 | Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 319 | 2.0.0 |
 | Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 280 | 1.0.0 |
 | Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 267 | 2.0.0 |
