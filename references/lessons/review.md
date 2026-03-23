@@ -1,6 +1,6 @@
 # Lesson: `/review`
 
-> Sprint phase: **Review** | Template: 260 lines | Version: 1.0.0
+> Sprint phase: **Review** | Template: 281 lines | Version: 1.0.0
 > Source: `garrytan/gstack/review/SKILL.md.tmpl`
 
 ## What Is This?
@@ -30,7 +30,7 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 ## What Do You Get?
 
-Structured output for the **Review** phase of your sprint.
+- Step 5.8: Persist Eng Review result
 
 ## The Workflow
 
@@ -70,7 +70,10 @@ Structured output for the **Review** phase of your sprint.
 **Step 12: Step 5.6: Documentation staleness check**
 > Cross-reference the diff against documentation files. For each `.md` file in the repo root (README.md, ARCHITECTURE.md, CONTRIBUTING.md, CLAUDE.md, etc.):
 
-**Step 13: Important Rules**
+**Step 13: Step 5.8: Persist Eng Review result**
+> After all review passes complete, persist the final `/review` outcome so `/ship` can
+
+**Step 14: Important Rules**
 
 ## Where It Fits
 

@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-23 14:04 UTC
+> 28 skills | Generated: 2026-03-23 14:34 UTC
 
 ## Quick Reference
 
@@ -14,7 +14,7 @@
 | Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 260 | 1.0.0 |
 | Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 267 | 2.0.0 |
 | Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 197 | 1.0.0 |
-| Review | [`/review`](lessons/review.md) | `/review` | 260 | 1.0.0 |
+| Review | [`/review`](lessons/review.md) | `/review` | 281 | 1.0.0 |
 | Test | [`/browse`](lessons/browse.md) | `/browse` | 142 | 1.1.0 |
 | Test | [`/qa`](lessons/qa.md) | `/qa` | 317 | 2.0.0 |
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 102 | 1.0.0 |

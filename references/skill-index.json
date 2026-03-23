@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T14:04:49.778152+00:00",
+  "generated_at": "2026-03-23T14:34:56.121472+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -880,9 +880,9 @@
       "description_oneline": "Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust",
       "version": "1.0.0",
       "phase": "Review",
-      "template_lines": 260,
-      "unique_lines": 237,
-      "section_count": 19,
+      "template_lines": 281,
+      "unique_lines": 258,
+      "section_count": 20,
       "sections": [
         "Pre-Landing PR Review",
         "Step 1: Check branch",
@@ -902,6 +902,7 @@
         "Greptile comment resolution",
         "Step 5.5: TODOS cross-reference",
         "Step 5.6: Documentation staleness check",
+        "Step 5.8: Persist Eng Review result",
         "Important Rules"
       ]
     },
