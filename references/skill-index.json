@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T04:13:48.941077+00:00",
+  "generated_at": "2026-03-23T04:53:57.510756+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -584,8 +584,8 @@
       "description_oneline": "CEO/founder-mode plan review. Rethink the problem, find the 10-star product,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 806,
-      "unique_lines": 781,
+      "template_lines": 809,
+      "unique_lines": 784,
       "section_count": 60,
       "sections": [
         "Mega Plan Review Mode",
@@ -704,9 +704,9 @@
       "description_oneline": "Eng manager-mode plan review. Lock in the execution plan \u2014 architecture,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 280,
-      "unique_lines": 256,
-      "section_count": 27,
+      "template_lines": 260,
+      "unique_lines": 236,
+      "section_count": 26,
       "sections": [
         "Plan Review Mode",
         "Priority hierarchy",
@@ -716,7 +716,6 @@
         "BEFORE YOU START:",
         "Design Doc Check",
         "Step 0: Scope Challenge",
-        "Step 0.5: Codex plan review (optional)",
         "Review Sections (after scope is agreed)",
         "1. Architecture review",
         "2. Code quality review",
