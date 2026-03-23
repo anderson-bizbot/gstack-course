@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-23T02:33:16.951997+00:00",
+  "generated_at": "2026-03-23T03:23:26.860160+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -296,8 +296,8 @@
       "description_oneline": "Design consultation: understands your product, researches the landscape, proposes a",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 370,
-      "unique_lines": 344,
+      "template_lines": 372,
+      "unique_lines": 346,
       "section_count": 22,
       "sections": [
         "/design-consultation: Your Design System, Built Together",
@@ -332,8 +332,8 @@
       "description_oneline": "Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems,",
       "version": "2.0.0",
       "phase": "Review",
-      "template_lines": 263,
-      "unique_lines": 237,
+      "template_lines": 267,
+      "unique_lines": 241,
       "section_count": 19,
       "sections": [
         "/design-review: Design Audit \u2192 Fix \u2192 Verify",
@@ -660,8 +660,8 @@
       "description_oneline": "Designer's eye plan review \u2014 interactive, like CEO and Eng review.",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 315,
-      "unique_lines": 292,
+      "template_lines": 319,
+      "unique_lines": 296,
       "section_count": 32,
       "sections": [
         "/plan-design-review: Designer's Eye Plan Review",
