@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T05:16:24.061527+00:00",
+  "generated_at": "2026-03-24T05:36:30.575063+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -73,13 +73,14 @@
       "description_oneline": "Auto-review pipeline \u2014 reads the full CEO, design, and eng review skills from disk",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 417,
-      "unique_lines": 390,
-      "section_count": 27,
+      "template_lines": 631,
+      "unique_lines": 604,
+      "section_count": 29,
       "sections": [
         "/autoplan \u2014 Auto-Review Pipeline",
         "The 6 Decision Principles",
         "Decision Classification",
+        "Sequential Execution \u2014 MANDATORY",
         "What \"Auto-Decide\" Means",
         "Phase 0: Intake + Restore Point",
         "Step 1: Capture restore point",
@@ -90,7 +91,7 @@
         "Step 3: Load skill files from disk",
         "Phase 1: CEO Review (Strategy & Scope)",
         "Phase 2: Design Review (conditional \u2014 skip if no UI scope)",
-        "Phase 3: Eng Review + Codex",
+        "Phase 3: Eng Review + Dual Voices",
         "Decision Audit Trail",
         "Decision Audit Trail",
         "Pre-Gate Verification",
@@ -101,6 +102,7 @@
         "Your Choices (taste decisions)",
         "Auto-Decided: [M] decisions [see Decision Audit Trail in plan file]",
         "Review Scores",
+        "Cross-Phase Themes",
         "Deferred to TODOS.md",
         "Completion: Write Review Logs",
         "Important Rules"

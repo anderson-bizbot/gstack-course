@@ -1,6 +1,6 @@
 # Lesson: `/autoplan`
 
-> Sprint phase: **Other** | Template: 417 lines | Version: 1.0.0
+> Sprint phase: **Other** | Template: 631 lines | Version: 1.0.0
 > Source: `garrytan/gstack/autoplan/SKILL.md.tmpl`
 
 ## What Is This?
@@ -48,47 +48,50 @@ Structured output for the **Other** phase of your sprint.
 **Step 3: Decision Classification**
 > Every auto-decision is classified:
 
-**Step 4: What "Auto-Decide" Means**
+**Step 4: Sequential Execution — MANDATORY**
+> Phases MUST execute in strict order: CEO → Design → Eng.
+
+**Step 5: What "Auto-Decide" Means**
 > Auto-decide replaces the USER'S judgment with the 6 principles. It does NOT replace
 
-**Step 5: Phase 0: Intake + Restore Point**
+**Step 6: Phase 0: Intake + Restore Point**
 
-**Step 6: /autoplan Restore Point**
+**Step 7: /autoplan Restore Point**
 > Captured: [timestamp] | Branch: [branch] | Commit: [short hash]
 
-**Step 7: Re-run Instructions**
+**Step 8: Re-run Instructions**
 > 1. Copy "Original Plan State" below back to your plan file
 
-**Step 8: Original Plan State**
+**Step 9: Original Plan State**
 > [verbatim plan file contents]
 
-**Step 9: Phase 1: CEO Review (Strategy & Scope)**
+**Step 10: Phase 1: CEO Review (Strategy & Scope)**
 > Follow plan-ceo-review/SKILL.md — all sections, full depth.
 
-**Step 10: Phase 2: Design Review (conditional — skip if no UI scope)**
+**Step 11: Phase 2: Design Review (conditional — skip if no UI scope)**
 > Follow plan-design-review/SKILL.md — all 7 dimensions, full depth.
 
-**Step 11: Phase 3: Eng Review + Codex**
+**Step 12: Phase 3: Eng Review + Dual Voices**
 > Follow plan-eng-review/SKILL.md — all sections, full depth.
 
-**Step 12: Decision Audit Trail**
+**Step 13: Decision Audit Trail**
 > After each auto-decision, append a row to the plan file using Edit:
 
-**Step 13: Decision Audit Trail**
+**Step 14: Decision Audit Trail**
 > Write one row per decision incrementally (via Edit). This keeps the audit on disk,
 
-**Step 14: Pre-Gate Verification**
+**Step 15: Pre-Gate Verification**
 > Before presenting the Final Approval Gate, verify that required outputs were actually
 
-**Step 15: Phase 4: Final Approval Gate**
+**Step 16: Phase 4: Final Approval Gate**
 > **STOP here and present the final state to the user.**
 
-**Step 16: /autoplan Review Complete**
+**Step 17: /autoplan Review Complete**
 
-**Step 17: Completion: Write Review Logs**
+**Step 18: Completion: Write Review Logs**
 > On approval, write 3 separate review log entries so /ship's dashboard recognizes them:
 
-**Step 18: Important Rules**
+**Step 19: Important Rules**
 
 ## Where It Fits
 
