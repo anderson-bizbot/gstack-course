@@ -1,18 +1,18 @@
 # Lesson: `/setup-browser-cookies`
 
-> Sprint phase: **Test** | Template: 75 lines | Version: 1.0.0
+> Sprint phase: **Test** | Template: 76 lines | Version: 1.0.0
 > Source: `garrytan/gstack/setup-browser-cookies/SKILL.md.tmpl`
 
 ## What Is This?
 
-Import cookies from your real browser (Comet, Chrome, Arc, Brave, Edge) into the
-headless browse session. Opens an interactive picker UI where you select which
-cookie domains to import. Use before QA testing authenticated pages. Use when asked
-to "import cookies", "login to the site", or "authenticate the browser".
+Import cookies from your real Chromium browser into the headless browse session.
+Opens an interactive picker UI where you select which cookie domains to import.
+Use before QA testing authenticated pages. Use when asked to "import cookies",
+"login to the site", or "authenticate the browser".
 
 ## When Do You Use It?
 
-- cookie domains to import. Use before QA testing authenticated pages. Use when asked
+- Use before QA testing authenticated pages. Use when asked to "import cookies",
 
 ## What Do You Say to Claude?
 

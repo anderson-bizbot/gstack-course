@@ -1,27 +1,27 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-23 17:25 UTC
+> 28 skills | Generated: 2026-03-24 05:16 UTC
 
 ## Quick Reference
 
 | Phase | Skill | What You Say | Lines | Version |
 |-------|-------|-------------|-------|---------|
 | Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 372 | 1.0.0 |
-| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 637 | 2.0.0 |
+| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 647 | 2.0.0 |
 | Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 809 | 1.0.0 |
 | Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 319 | 2.0.0 |
-| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 260 | 1.0.0 |
+| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 267 | 1.0.0 |
 | Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 267 | 2.0.0 |
 | Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 197 | 1.0.0 |
 | Review | [`/review`](lessons/review.md) | `/review` | 281 | 1.0.0 |
 | Test | [`/browse`](lessons/browse.md) | `/browse` | 142 | 1.1.0 |
 | Test | [`/qa`](lessons/qa.md) | `/qa` | 317 | 2.0.0 |
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 102 | 1.0.0 |
-| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 75 | 1.0.0 |
+| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 76 | 1.0.0 |
 | Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 358 | 1.0.0 |
 | Ship | [`/retro`](lessons/retro.md) | `/retro` | 834 | 2.0.0 |
-| Ship | [`/ship`](lessons/ship.md) | `/ship` | 529 | 1.0.0 |
+| Ship | [`/ship`](lessons/ship.md) | `/ship` | 556 | 1.0.0 |
 | Safety | [`/careful`](lessons/careful.md) | `/careful` | 58 | 0.1.0 |
 | Safety | [`/freeze`](lessons/freeze.md) | `/freeze` | 81 | 0.1.0 |
 | Safety | [`/guard`](lessons/guard.md) | `/guard` | 81 | 0.1.0 |
@@ -69,7 +69,7 @@ SAFETY: /careful → /freeze → /guard → /unfreeze
 - [`/browse`](lessons/browse.md) — Fast headless browser for QA testing and site dogfooding. Navigate any URL, inte
 - [`/qa`](lessons/qa.md) — Systematically QA test a web application and fix bugs found. Runs QA testing,
 - [`/qa-only`](lessons/qa-only.md) — Report-only QA testing. Systematically tests a web application and produces a
-- [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) — Import cookies from your real browser (Comet, Chrome, Arc, Brave, Edge) into the
+- [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) — Import cookies from your real Chromium browser into the headless browse session.
 
 ### Ship
 
