@@ -1,6 +1,6 @@
 # Lesson: `/setup-browser-cookies`
 
-> Sprint phase: **Test** | Template: 76 lines | Version: 1.0.0
+> Sprint phase: **Test** | Template: 77 lines | Version: 1.0.0
 > Source: `garrytan/gstack/setup-browser-cookies/SKILL.md.tmpl`
 
 ## What Is This?

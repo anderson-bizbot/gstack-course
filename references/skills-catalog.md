@@ -1,40 +1,40 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-24 05:36 UTC
+> 28 skills | Generated: 2026-03-24 06:06 UTC
 
 ## Quick Reference
 
 | Phase | Skill | What You Say | Lines | Version |
 |-------|-------|-------------|-------|---------|
-| Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 372 | 1.0.0 |
-| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 647 | 2.0.0 |
-| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 809 | 1.0.0 |
-| Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 319 | 2.0.0 |
-| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 267 | 1.0.0 |
-| Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 267 | 2.0.0 |
-| Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 197 | 1.0.0 |
-| Review | [`/review`](lessons/review.md) | `/review` | 281 | 1.0.0 |
-| Test | [`/browse`](lessons/browse.md) | `/browse` | 142 | 1.1.0 |
-| Test | [`/qa`](lessons/qa.md) | `/qa` | 317 | 2.0.0 |
-| Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 102 | 1.0.0 |
-| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 76 | 1.0.0 |
-| Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 358 | 1.0.0 |
-| Ship | [`/retro`](lessons/retro.md) | `/retro` | 834 | 2.0.0 |
-| Ship | [`/ship`](lessons/ship.md) | `/ship` | 556 | 1.0.0 |
+| Think | [`/design-consultation`](lessons/design-consultation.md) | `/design-consultation` | 373 | 1.0.0 |
+| Think | [`/office-hours`](lessons/office-hours.md) | `/office-hours` | 648 | 2.0.0 |
+| Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 810 | 1.0.0 |
+| Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 320 | 2.0.0 |
+| Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 268 | 1.0.0 |
+| Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 268 | 2.0.0 |
+| Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 198 | 1.0.0 |
+| Review | [`/review`](lessons/review.md) | `/review` | 282 | 1.0.0 |
+| Test | [`/browse`](lessons/browse.md) | `/browse` | 143 | 1.1.0 |
+| Test | [`/qa`](lessons/qa.md) | `/qa` | 318 | 2.0.0 |
+| Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 103 | 1.0.0 |
+| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 77 | 1.0.0 |
+| Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 359 | 1.0.0 |
+| Ship | [`/retro`](lessons/retro.md) | `/retro` | 835 | 2.0.0 |
+| Ship | [`/ship`](lessons/ship.md) | `/ship` | 557 | 1.0.0 |
 | Safety | [`/careful`](lessons/careful.md) | `/careful` | 58 | 0.1.0 |
 | Safety | [`/freeze`](lessons/freeze.md) | `/freeze` | 81 | 0.1.0 |
 | Safety | [`/guard`](lessons/guard.md) | `/guard` | 81 | 0.1.0 |
 | Safety | [`/unfreeze`](lessons/unfreeze.md) | `/unfreeze` | 39 | 0.1.0 |
 | Meta | [`/gstack-upgrade`](lessons/gstack-upgrade.md) | `/gstack-upgrade` | 231 | 1.1.0 |
-| Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 256 | 1.1.0 |
-| Other | [`/autoplan`](lessons/autoplan.md) | `/autoplan` | 631 | 1.0.0 |
-| Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 234 | 1.0.0 |
-| Other | [`/canary`](lessons/canary.md) | `/canary` | 221 | 1.0.0 |
-| Other | [`/codex`](lessons/codex.md) | `/codex` | 357 | 1.0.0 |
-| Other | [`/cso`](lessons/cso.md) | `/cso` | 621 | 2.0.0 |
-| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 576 | 1.0.0 |
-| Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 221 | 1.0.0 |
+| Other | [`/gstack`](lessons/gstack.md) | `/gstack` | 257 | 1.1.0 |
+| Other | [`/autoplan`](lessons/autoplan.md) | `/autoplan` | 632 | 1.0.0 |
+| Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 235 | 1.0.0 |
+| Other | [`/canary`](lessons/canary.md) | `/canary` | 222 | 1.0.0 |
+| Other | [`/codex`](lessons/codex.md) | `/codex` | 358 | 1.0.0 |
+| Other | [`/cso`](lessons/cso.md) | `/cso` | 622 | 2.0.0 |
+| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 577 | 1.0.0 |
+| Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 222 | 1.0.0 |
 
 ## The Sprint Flow
 

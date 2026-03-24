@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-24T05:36:30.575063+00:00",
+  "generated_at": "2026-03-24T06:06:42.561390+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -11,7 +11,7 @@
       "description_oneline": "Fast headless browser for QA testing and site dogfooding. Navigate pages, interact with",
       "version": "1.1.0",
       "phase": "Other",
-      "template_lines": 256,
+      "template_lines": 257,
       "unique_lines": 229,
       "section_count": 48,
       "sections": [
@@ -73,7 +73,7 @@
       "description_oneline": "Auto-review pipeline \u2014 reads the full CEO, design, and eng review skills from disk",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 631,
+      "template_lines": 632,
       "unique_lines": 604,
       "section_count": 29,
       "sections": [
@@ -116,7 +116,7 @@
       "description_oneline": "Performance regression detection using the browse daemon. Establishes",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 234,
+      "template_lines": 235,
       "unique_lines": 212,
       "section_count": 15,
       "sections": [
@@ -145,7 +145,7 @@
       "description_oneline": "Fast headless browser for QA testing and site dogfooding. Navigate any URL, interact with",
       "version": "1.1.0",
       "phase": "Test",
-      "template_lines": 142,
+      "template_lines": 143,
       "unique_lines": 121,
       "section_count": 21,
       "sections": [
@@ -180,7 +180,7 @@
       "description_oneline": "Post-deploy canary monitoring. Watches the live app for console errors,",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 221,
+      "template_lines": 222,
       "unique_lines": 199,
       "section_count": 12,
       "sections": [
@@ -224,7 +224,7 @@
       "description_oneline": "OpenAI Codex CLI wrapper \u2014 three modes. Code review: independent diff review via",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 357,
+      "template_lines": 358,
       "unique_lines": 336,
       "section_count": 10,
       "sections": [
@@ -248,7 +248,7 @@
       "description_oneline": "Chief Security Officer mode. Infrastructure-first security audit: secrets archaeology,",
       "version": "2.0.0",
       "phase": "Other",
-      "template_lines": 621,
+      "template_lines": 622,
       "unique_lines": 597,
       "section_count": 25,
       "sections": [
@@ -287,7 +287,7 @@
       "description_oneline": "Design consultation: understands your product, researches the landscape, proposes a",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 372,
+      "template_lines": 373,
       "unique_lines": 346,
       "section_count": 22,
       "sections": [
@@ -323,7 +323,7 @@
       "description_oneline": "Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems,",
       "version": "2.0.0",
       "phase": "Review",
-      "template_lines": 267,
+      "template_lines": 268,
       "unique_lines": 241,
       "section_count": 19,
       "sections": [
@@ -356,7 +356,7 @@
       "description_oneline": "Post-ship documentation update. Reads all project docs, cross-references the",
       "version": "1.0.0",
       "phase": "Ship",
-      "template_lines": 358,
+      "template_lines": 359,
       "unique_lines": 336,
       "section_count": 11,
       "sections": [
@@ -441,7 +441,7 @@
       "description_oneline": "Systematic debugging with root cause investigation. Four phases: investigate,",
       "version": "1.0.0",
       "phase": "Review",
-      "template_lines": 197,
+      "template_lines": 198,
       "unique_lines": 161,
       "section_count": 9,
       "sections": [
@@ -464,7 +464,7 @@
       "description_oneline": "Land and deploy workflow. Merges the PR, waits for CI and deploy,",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 576,
+      "template_lines": 577,
       "unique_lines": 555,
       "section_count": 26,
       "sections": [
@@ -504,7 +504,7 @@
       "description_oneline": "YC Office Hours \u2014 two modes. Startup mode: six forcing questions that expose",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 647,
+      "template_lines": 648,
       "unique_lines": 618,
       "section_count": 59,
       "sections": [
@@ -577,7 +577,7 @@
       "description_oneline": "CEO/founder-mode plan review. Rethink the problem, find the 10-star product,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 809,
+      "template_lines": 810,
       "unique_lines": 784,
       "section_count": 60,
       "sections": [
@@ -651,7 +651,7 @@
       "description_oneline": "Designer's eye plan review \u2014 interactive, like CEO and Eng review.",
       "version": "2.0.0",
       "phase": "Think",
-      "template_lines": 319,
+      "template_lines": 320,
       "unique_lines": 296,
       "section_count": 32,
       "sections": [
@@ -697,7 +697,7 @@
       "description_oneline": "Eng manager-mode plan review. Lock in the execution plan \u2014 architecture,",
       "version": "1.0.0",
       "phase": "Think",
-      "template_lines": 267,
+      "template_lines": 268,
       "unique_lines": 243,
       "section_count": 26,
       "sections": [
@@ -737,7 +737,7 @@
       "description_oneline": "Systematically QA test a web application and fix bugs found. Runs QA testing,",
       "version": "2.0.0",
       "phase": "Test",
-      "template_lines": 317,
+      "template_lines": 318,
       "unique_lines": 290,
       "section_count": 20,
       "sections": [
@@ -771,7 +771,7 @@
       "description_oneline": "Report-only QA testing. Systematically tests a web application and produces a",
       "version": "1.0.0",
       "phase": "Test",
-      "template_lines": 102,
+      "template_lines": 103,
       "unique_lines": 81,
       "section_count": 6,
       "sections": [
@@ -791,7 +791,7 @@
       "description_oneline": "Weekly engineering retrospective. Analyzes commit history, work patterns,",
       "version": "2.0.0",
       "phase": "Ship",
-      "template_lines": 834,
+      "template_lines": 835,
       "unique_lines": 814,
       "section_count": 79,
       "sections": [
@@ -884,7 +884,7 @@
       "description_oneline": "Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust",
       "version": "1.0.0",
       "phase": "Review",
-      "template_lines": 281,
+      "template_lines": 282,
       "unique_lines": 258,
       "section_count": 20,
       "sections": [
@@ -918,7 +918,7 @@
       "description_oneline": "Import cookies from your real Chromium browser into the headless browse session.",
       "version": "1.0.0",
       "phase": "Test",
-      "template_lines": 76,
+      "template_lines": 77,
       "unique_lines": 58,
       "section_count": 8,
       "sections": [
@@ -940,7 +940,7 @@
       "description_oneline": "Configure deployment settings for /land-and-deploy. Detects your deploy",
       "version": "1.0.0",
       "phase": "Other",
-      "template_lines": 221,
+      "template_lines": 222,
       "unique_lines": 198,
       "section_count": 15,
       "sections": [
@@ -969,7 +969,7 @@
       "description_oneline": "Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. Use when asked to \"ship\", \"deploy\", \"push to main\", \"create a PR\", or \"merge",
       "version": "1.0.0",
       "phase": "Ship",
-      "template_lines": 556,
+      "template_lines": 557,
       "unique_lines": 535,
       "section_count": 27,
       "sections": [

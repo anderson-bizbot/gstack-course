@@ -1,6 +1,6 @@
 # Lesson: `/cso`
 
-> Sprint phase: **Other** | Template: 621 lines | Version: 2.0.0
+> Sprint phase: **Other** | Template: 622 lines | Version: 2.0.0
 > Source: `garrytan/gstack/cso/SKILL.md.tmpl`
 
 ## What Is This?

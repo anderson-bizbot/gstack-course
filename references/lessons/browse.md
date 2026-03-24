@@ -1,6 +1,6 @@
 # Lesson: `/browse`
 
-> Sprint phase: **Test** | Template: 142 lines | Version: 1.1.0
+> Sprint phase: **Test** | Template: 143 lines | Version: 1.1.0
 > Source: `garrytan/gstack/browse/SKILL.md.tmpl`
 
 ## What Is This?

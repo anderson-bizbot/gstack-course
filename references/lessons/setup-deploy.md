@@ -1,6 +1,6 @@
 # Lesson: `/setup-deploy`
 
-> Sprint phase: **Other** | Template: 221 lines | Version: 1.0.0
+> Sprint phase: **Other** | Template: 222 lines | Version: 1.0.0
 > Source: `garrytan/gstack/setup-deploy/SKILL.md.tmpl`
 
 ## What Is This?

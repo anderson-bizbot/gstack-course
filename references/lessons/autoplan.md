@@ -1,6 +1,6 @@
 # Lesson: `/autoplan`
 
-> Sprint phase: **Other** | Template: 631 lines | Version: 1.0.0
+> Sprint phase: **Other** | Template: 632 lines | Version: 1.0.0
 > Source: `garrytan/gstack/autoplan/SKILL.md.tmpl`
 
 ## What Is This?

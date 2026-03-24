@@ -1,6 +1,6 @@
 # Lesson: `/office-hours`
 
-> Sprint phase: **Think** | Template: 647 lines | Version: 2.0.0
+> Sprint phase: **Think** | Template: 648 lines | Version: 2.0.0
 > Source: `garrytan/gstack/office-hours/SKILL.md.tmpl`
 
 ## What Is This?
