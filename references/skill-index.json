@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T01:08:36.294098+00:00",
+  "generated_at": "2026-03-25T03:08:48.134212+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -791,9 +791,9 @@
       "description_oneline": "Weekly engineering retrospective. Analyzes commit history, work patterns,",
       "version": "2.0.0",
       "phase": "Ship",
-      "template_lines": 835,
-      "unique_lines": 814,
-      "section_count": 79,
+      "template_lines": 857,
+      "unique_lines": 836,
+      "section_count": 80,
       "sections": [
         "Detect default branch",
         "/retro \u2014 Weekly Engineering Retrospective",
@@ -841,6 +841,7 @@
         "Shipping Velocity",
         "Code Quality Signals",
         "Test Health",
+        "Plan Completion",
         "Focus & Highlights",
         "Your Week (personal deep-dive)",
         "Team Breakdown",
@@ -884,8 +885,8 @@
       "description_oneline": "Pre-landing PR review. Analyzes diff against the base branch for SQL safety, LLM trust",
       "version": "1.0.0",
       "phase": "Review",
-      "template_lines": 282,
-      "unique_lines": 258,
+      "template_lines": 285,
+      "unique_lines": 261,
       "section_count": 20,
       "sections": [
         "Pre-Landing PR Review",
@@ -969,9 +970,9 @@
       "description_oneline": "Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. Use when asked to \"ship\", \"deploy\", \"push to main\", \"create a PR\", or \"merge",
       "version": "1.0.0",
       "phase": "Ship",
-      "template_lines": 557,
-      "unique_lines": 535,
-      "section_count": 27,
+      "template_lines": 606,
+      "unique_lines": 584,
+      "section_count": 31,
       "sections": [
         "Ship: Fully Automated Ship Workflow",
         "Step 1: Pre-flight",
@@ -981,6 +982,7 @@
         "Step 3: Run tests (on merged code)",
         "Step 3.25: Eval Suites (conditional)",
         "Step 3.4: Test Coverage Audit",
+        "Step 3.45: Plan Completion Audit",
         "Step 3.5: Pre-Landing Review",
         "Step 3.75: Address Greptile review comments (if PR exists)",
         "Step 4: Version bump (auto-decide)",
@@ -996,9 +998,12 @@
         "Design Review",
         "Eval Results",
         "Greptile Review",
+        "Plan Completion",
+        "Verification Results",
         "TODOS",
         "Test plan",
         "Step 8.5: Auto-invoke /document-release",
+        "Step 8.75: Persist ship metrics",
         "Important Rules"
       ]
     },

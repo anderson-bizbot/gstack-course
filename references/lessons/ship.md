@@ -1,6 +1,6 @@
 # Lesson: `/ship`
 
-> Sprint phase: **Ship** | Template: 557 lines | Version: 1.0.0
+> Sprint phase: **Ship** | Template: 606 lines | Version: 1.0.0
 > Source: `garrytan/gstack/ship/SKILL.md.tmpl`
 
 ## What Is This?
@@ -34,6 +34,8 @@ Claude walks you through a structured conversation:
 
 - Ship: Fully Automated Ship Workflow
 - Eval Results
+- Verification Results
+- Step 8.75: Persist ship metrics
 
 ## The Workflow
 
@@ -61,61 +63,73 @@ Claude walks you through a structured conversation:
 **Step 8: Step 3.4: Test Coverage Audit**
 > {{TEST_COVERAGE_AUDIT_SHIP}}
 
-**Step 9: Step 3.5: Pre-Landing Review**
+**Step 9: Step 3.45: Plan Completion Audit**
+> {{PLAN_COMPLETION_AUDIT_SHIP}}
+
+**Step 10: Step 3.5: Pre-Landing Review**
 > Review the diff for structural issues that tests don't catch.
 
-**Step 10: Step 3.75: Address Greptile review comments (if PR exists)**
+**Step 11: Step 3.75: Address Greptile review comments (if PR exists)**
 > Read `.claude/skills/review/greptile-triage.md` and follow the fetch, filter, classify, and **escalation detection** steps.
 
-**Step 11: Step 4: Version bump (auto-decide)**
+**Step 12: Step 4: Version bump (auto-decide)**
 > 1. Read the current `VERSION` file (4-digit format: `MAJOR.MINOR.PATCH.MICRO`)
 
-**Step 12: Step 5: CHANGELOG (auto-generate)**
+**Step 13: Step 5: CHANGELOG (auto-generate)**
 > 1. Read `CHANGELOG.md` header to know the format.
 
-**Step 13: Step 5.5: TODOS.md (auto-update)**
+**Step 14: Step 5.5: TODOS.md (auto-update)**
 > Cross-reference the project's TODOS.md against the changes being shipped. Mark completed items automatically; prompt only if the file is missing or disorganized.
 
-**Step 14: Step 6: Commit (bisectable chunks)**
+**Step 15: Step 6: Commit (bisectable chunks)**
 > **Goal:** Create small, logical commits that work well with `git bisect` and help LLMs understand what changed.
 
-**Step 15: Step 6.5: Verification Gate**
+**Step 16: Step 6.5: Verification Gate**
 > **IRON LAW: NO COMPLETION CLAIMS WITHOUT FRESH VERIFICATION EVIDENCE.**
 
-**Step 16: Step 7: Push**
+**Step 17: Step 7: Push**
 > Push to the remote with upstream tracking:
 
-**Step 17: Step 8: Create PR**
+**Step 18: Step 8: Create PR**
 > Create a pull request using `gh`:
 
-**Step 18: Summary**
+**Step 19: Summary**
 > <bullet points from CHANGELOG>
 
-**Step 19: Test Coverage**
+**Step 20: Test Coverage**
 > <coverage diagram from Step 3.4, or "All new code paths have test coverage.">
 
-**Step 20: Pre-Landing Review**
+**Step 21: Pre-Landing Review**
 > <findings from Step 3.5 code review, or "No issues found.">
 
-**Step 21: Design Review**
+**Step 22: Design Review**
 > <If design review ran: "Design Review (lite): N findings — M auto-fixed, K skipped. AI Slop: clean/N issues.">
 
-**Step 22: Eval Results**
+**Step 23: Eval Results**
 > <If evals ran: suite names, pass/fail counts, cost dashboard summary. If skipped: "No prompt-related files changed — evals skipped.">
 
-**Step 23: Greptile Review**
+**Step 24: Greptile Review**
 > <If Greptile comments were found: bullet list with [FIXED] / [FALSE POSITIVE] / [ALREADY FIXED] tag + one-line summary per comment>
 
-**Step 24: TODOS**
+**Step 25: Plan Completion**
+> <If plan file found: completion checklist summary from Step 3.45>
+
+**Step 26: Verification Results**
+> <If verification ran: summary from Step 3.47 (N PASS, M FAIL, K SKIPPED)>
+
+**Step 27: TODOS**
 > <If items marked complete: bullet list of completed items with version>
 
-**Step 25: Test plan**
+**Step 28: Test plan**
 > 🤖 Generated with [Claude Code](https://claude.com/claude-code)
 
-**Step 26: Step 8.5: Auto-invoke /document-release**
+**Step 29: Step 8.5: Auto-invoke /document-release**
 > After the PR is created, automatically sync project documentation. Read the
 
-**Step 27: Important Rules**
+**Step 30: Step 8.75: Persist ship metrics**
+> Log coverage and plan completion data so `/retro` can track trends:
+
+**Step 31: Important Rules**
 
 ## Where It Fits
 
