@@ -1,6 +1,6 @@
 # Lesson: `/gstack`
 
-> Sprint phase: **Other** | Template: 257 lines | Version: 1.1.0
+> Sprint phase: **Other** | Template: 249 lines | Version: 1.1.0
 > Source: `garrytan/gstack/gstack/SKILL.md.tmpl`
 
 ## What Is This?
@@ -9,14 +9,6 @@ Fast headless browser for QA testing and site dogfooding. Navigate pages, intera
 elements, verify state, diff before/after, take annotated screenshots, test responsive
 layouts, forms, uploads, dialogs, and capture bug evidence. Use when asked to open or
 test a site, verify a deployment, dogfood a user flow, or file a bug with screenshots.
-Also suggest adjacent gstack skills by stage: brainstorm /office-hours; strategy
-/plan-ceo-review; architecture /plan-eng-review; design /plan-design-review or
-/design-consultation; auto-review /autoplan; debugging /investigate; QA /qa; code review
-/review; visual audit /design-review; shipping /ship; docs /document-release; retro
-/retro; second opinion /codex; prod safety /careful or /guard; scoped edits /freeze or
-/unfreeze; gstack upgrades /gstack-upgrade. If the user opts out of suggestions, stop
-and run gstack-config set proactive false; if they opt back in, run gstack-config set
-proactive true.
 
 ## When Do You Use It?
 
