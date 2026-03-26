@@ -1,6 +1,6 @@
 # Lesson: `/qa`
 
-> Sprint phase: **Test** | Template: 318 lines | Version: 2.0.0
+> Sprint phase: **Test** | Template: 324 lines | Version: 2.0.0
 > Source: `garrytan/gstack/qa/SKILL.md.tmpl`
 
 ## What Is This?

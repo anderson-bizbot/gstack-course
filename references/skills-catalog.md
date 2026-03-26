@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-26 14:31 UTC
+> 29 skills | Generated: 2026-03-26 17:22 UTC
 
 ## Quick Reference
 
@@ -12,13 +12,13 @@
 | Think | [`/plan-ceo-review`](lessons/plan-ceo-review.md) | `/plan-ceo-review` | 810 | 1.0.0 |
 | Think | [`/plan-design-review`](lessons/plan-design-review.md) | `/plan-design-review` | 320 | 2.0.0 |
 | Think | [`/plan-eng-review`](lessons/plan-eng-review.md) | `/plan-eng-review` | 268 | 1.0.0 |
-| Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 268 | 2.0.0 |
+| Review | [`/design-review`](lessons/design-review.md) | `/design-review` | 274 | 2.0.0 |
 | Review | [`/investigate`](lessons/investigate.md) | `/investigate` | 198 | 1.0.0 |
 | Review | [`/review`](lessons/review.md) | `/review` | 285 | 1.0.0 |
 | Test | [`/browse`](lessons/browse.md) | `/browse` | 143 | 1.1.0 |
-| Test | [`/qa`](lessons/qa.md) | `/qa` | 318 | 2.0.0 |
+| Test | [`/qa`](lessons/qa.md) | `/qa` | 324 | 2.0.0 |
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 103 | 1.0.0 |
-| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 77 | 1.0.0 |
+| Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 85 | 1.0.0 |
 | Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 375 | 1.0.0 |
 | Ship | [`/retro`](lessons/retro.md) | `/retro` | 849 | 2.0.0 |
 | Ship | [`/ship`](lessons/ship.md) | `/ship` | 623 | 1.0.0 |
@@ -32,6 +32,7 @@
 | Other | [`/benchmark`](lessons/benchmark.md) | `/benchmark` | 235 | 1.0.0 |
 | Other | [`/canary`](lessons/canary.md) | `/canary` | 222 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 358 | 1.0.0 |
+| Other | [`/connect-chrome`](lessons/connect-chrome.md) | `/connect-chrome` | 137 | 0.1.0 |
 | Other | [`/cso`](lessons/cso.md) | `/cso` | 622 | 2.0.0 |
 | Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 580 | 1.0.0 |
 | Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 222 | 1.0.0 |
@@ -95,6 +96,7 @@ SAFETY: /careful → /freeze → /guard → /unfreeze
 - [`/benchmark`](lessons/benchmark.md) — Performance regression detection using the browse daemon. Establishes
 - [`/canary`](lessons/canary.md) — Post-deploy canary monitoring. Watches the live app for console errors,
 - [`/codex`](lessons/codex.md) — OpenAI Codex CLI wrapper — three modes. Code review: independent diff review via
+- [`/connect-chrome`](lessons/connect-chrome.md) — Launch real Chrome controlled by gstack with the Side Panel extension auto-loade
 - [`/cso`](lessons/cso.md) — Chief Security Officer mode. Infrastructure-first security audit: secrets archae
 - [`/land-and-deploy`](lessons/land-and-deploy.md) — Land and deploy workflow. Merges the PR, waits for CI and deploy,
 - [`/setup-deploy`](lessons/setup-deploy.md) — Configure deployment settings for /land-and-deploy. Detects your deploy

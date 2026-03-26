@@ -1,6 +1,6 @@
 # Lesson: `/setup-browser-cookies`
 
-> Sprint phase: **Test** | Template: 77 lines | Version: 1.0.0
+> Sprint phase: **Test** | Template: 85 lines | Version: 1.0.0
 > Source: `garrytan/gstack/setup-browser-cookies/SKILL.md.tmpl`
 
 ## What Is This?
@@ -36,12 +36,15 @@ Structured output for the **Test** phase of your sprint.
 **Step 1: Setup Browser Cookies**
 > Import logged-in sessions from your real Chromium browser into the headless browse session.
 
-**Step 2: How it works**
+**Step 2: CDP mode check**
+> First, check if browse is already connected to the user's real browser:
+
+**Step 3: How it works**
 > 1. Find the browse binary
 
-**Step 3: Steps**
+**Step 4: Steps**
 
-**Step 4: Notes**
+**Step 5: Notes**
 
 ## Where It Fits
 

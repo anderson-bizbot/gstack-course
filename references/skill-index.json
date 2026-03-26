@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-26T14:31:58.159241+00:00",
+  "generated_at": "2026-03-26T17:22:17.306251+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
-  "skill_count": 28,
+  "skill_count": 29,
   "skills": [
     {
       "dir_name": "gstack",
@@ -241,6 +241,27 @@
       ]
     },
     {
+      "dir_name": "connect-chrome",
+      "name": "connect-chrome",
+      "slash": "/connect-chrome",
+      "description": "Launch real Chrome controlled by gstack with the Side Panel extension auto-loaded.\nOne command: connects Claude to a visible Chrome window where you can watch every\naction in real time. The extension shows a live activity feed in the Side Panel.\nUse when asked to \"connect chrome\", \"open chrome\", \"real browser\", \"launch chrome\",\n\"side panel\", or \"control my browser\".",
+      "description_oneline": "Launch real Chrome controlled by gstack with the Side Panel extension auto-loaded.",
+      "version": "0.1.0",
+      "phase": "Other",
+      "template_lines": 137,
+      "unique_lines": 117,
+      "section_count": 7,
+      "sections": [
+        "/connect-chrome \u2014 Launch Real Chrome with Side Panel",
+        "Step 1: Connect",
+        "Step 2: Verify",
+        "Step 3: Guide the user to the Side Panel",
+        "Step 4: Demo",
+        "Step 5: Sidebar chat",
+        "Step 6: What's next"
+      ]
+    },
+    {
       "dir_name": "cso",
       "name": "cso",
       "slash": "/cso",
@@ -323,8 +344,8 @@
       "description_oneline": "Designer's eye QA: finds visual inconsistency, spacing issues, hierarchy problems,",
       "version": "2.0.0",
       "phase": "Review",
-      "template_lines": 268,
-      "unique_lines": 241,
+      "template_lines": 274,
+      "unique_lines": 247,
       "section_count": 19,
       "sections": [
         "/design-review: Design Audit \u2192 Fix \u2192 Verify",
@@ -737,8 +758,8 @@
       "description_oneline": "Systematically QA test a web application and fix bugs found. Runs QA testing,",
       "version": "2.0.0",
       "phase": "Test",
-      "template_lines": 318,
-      "unique_lines": 290,
+      "template_lines": 324,
+      "unique_lines": 296,
       "section_count": 20,
       "sections": [
         "/qa: Test \u2192 Fix \u2192 Verify",
@@ -918,11 +939,12 @@
       "description_oneline": "Import cookies from your real Chromium browser into the headless browse session.",
       "version": "1.0.0",
       "phase": "Test",
-      "template_lines": 77,
-      "unique_lines": 58,
-      "section_count": 8,
+      "template_lines": 85,
+      "unique_lines": 66,
+      "section_count": 9,
       "sections": [
         "Setup Browser Cookies",
+        "CDP mode check",
         "How it works",
         "Steps",
         "1. Find the browse binary",
