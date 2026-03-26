@@ -1,6 +1,6 @@
 # Lesson: `/land-and-deploy`
 
-> Sprint phase: **Other** | Template: 577 lines | Version: 1.0.0
+> Sprint phase: **Other** | Template: 579 lines | Version: 1.0.0
 > Source: `garrytan/gstack/land-and-deploy/SKILL.md.tmpl`
 
 ## What Is This?

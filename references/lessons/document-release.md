@@ -1,6 +1,6 @@
 # Lesson: `/document-release`
 
-> Sprint phase: **Ship** | Template: 359 lines | Version: 1.0.0
+> Sprint phase: **Ship** | Template: 375 lines | Version: 1.0.0
 > Source: `garrytan/gstack/document-release/SKILL.md.tmpl`
 
 ## What Is This?

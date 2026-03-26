@@ -1,7 +1,7 @@
 # gstack Skills Catalog
 
 > Auto-generated from [garrytan/gstack](https://github.com/garrytan/gstack) **templates**
-> 28 skills | Generated: 2026-03-26 06:11 UTC
+> 28 skills | Generated: 2026-03-26 13:21 UTC
 
 ## Quick Reference
 
@@ -19,9 +19,9 @@
 | Test | [`/qa`](lessons/qa.md) | `/qa` | 318 | 2.0.0 |
 | Test | [`/qa-only`](lessons/qa-only.md) | `/qa-only` | 103 | 1.0.0 |
 | Test | [`/setup-browser-cookies`](lessons/setup-browser-cookies.md) | `/setup-browser-cookies` | 77 | 1.0.0 |
-| Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 359 | 1.0.0 |
-| Ship | [`/retro`](lessons/retro.md) | `/retro` | 857 | 2.0.0 |
-| Ship | [`/ship`](lessons/ship.md) | `/ship` | 606 | 1.0.0 |
+| Ship | [`/document-release`](lessons/document-release.md) | `/document-release` | 375 | 1.0.0 |
+| Ship | [`/retro`](lessons/retro.md) | `/retro` | 849 | 2.0.0 |
+| Ship | [`/ship`](lessons/ship.md) | `/ship` | 627 | 1.0.0 |
 | Safety | [`/careful`](lessons/careful.md) | `/careful` | 58 | 0.1.0 |
 | Safety | [`/freeze`](lessons/freeze.md) | `/freeze` | 81 | 0.1.0 |
 | Safety | [`/guard`](lessons/guard.md) | `/guard` | 81 | 0.1.0 |
@@ -33,7 +33,7 @@
 | Other | [`/canary`](lessons/canary.md) | `/canary` | 222 | 1.0.0 |
 | Other | [`/codex`](lessons/codex.md) | `/codex` | 358 | 1.0.0 |
 | Other | [`/cso`](lessons/cso.md) | `/cso` | 622 | 2.0.0 |
-| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 577 | 1.0.0 |
+| Other | [`/land-and-deploy`](lessons/land-and-deploy.md) | `/land-and-deploy` | 579 | 1.0.0 |
 | Other | [`/setup-deploy`](lessons/setup-deploy.md) | `/setup-deploy` | 222 | 1.0.0 |
 
 ## The Sprint Flow

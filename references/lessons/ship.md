@@ -1,6 +1,6 @@
 # Lesson: `/ship`
 
-> Sprint phase: **Ship** | Template: 606 lines | Version: 1.0.0
+> Sprint phase: **Ship** | Template: 627 lines | Version: 1.0.0
 > Source: `garrytan/gstack/ship/SKILL.md.tmpl`
 
 ## What Is This?
@@ -90,8 +90,8 @@ Claude walks you through a structured conversation:
 **Step 17: Step 7: Push**
 > Push to the remote with upstream tracking:
 
-**Step 18: Step 8: Create PR**
-> Create a pull request using `gh`:
+**Step 18: Step 8: Create PR/MR**
+> Create a pull request (GitHub) or merge request (GitLab) using the platform detected in Step 0.
 
 **Step 19: Summary**
 > <bullet points from CHANGELOG>

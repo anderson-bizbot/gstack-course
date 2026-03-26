@@ -1,6 +1,6 @@
 # Lesson: `/retro`
 
-> Sprint phase: **Ship** | Template: 857 lines | Version: 2.0.0
+> Sprint phase: **Ship** | Template: 849 lines | Version: 2.0.0
 > Source: `garrytan/gstack/retro/SKILL.md.tmpl`
 
 ## What Is This?
@@ -36,107 +36,104 @@ This skill runs mostly automatically — you provide initial context and Claude 
 
 ## The Workflow
 
-**Step 1: Detect default branch**
-> Before gathering data, detect the repo's default branch name:
-
-**Step 2: /retro — Weekly Engineering Retrospective**
+**Step 1: /retro — Weekly Engineering Retrospective**
 > Generates a comprehensive engineering retrospective analyzing commit history, work patterns, and code quality metrics. Team-aware: identifies the user running the command, then analyzes every contribu...
 
-**Step 3: User-invocable**
+**Step 2: User-invocable**
 > When the user types `/retro`, run this skill.
 
-**Step 4: Arguments**
+**Step 3: Arguments**
 
-**Step 5: Instructions**
+**Step 4: Instructions**
 > Parse the argument to determine the time window. Default to 7 days if no argument given. All times should be reported in the user's **local timezone** (use the system default — do NOT set `TZ`).
 
-**Step 6: Identify who is running the retro**
+**Step 5: Identify who is running the retro**
 > git config user.name
 
-**Step 7: 1. All commits in window with timestamps, subject, hash, AUTHOR, files changed, insertions, deletions**
+**Step 6: 1. All commits in window with timestamps, subject, hash, AUTHOR, files changed, insertions, deletions**
 > git log origin/<default> --since="<window>" --format="%H|%aN|%ae|%ai|%s" --shortstat
 
-**Step 8: 2. Per-commit test vs total LOC breakdown with author**
+**Step 7: 2. Per-commit test vs total LOC breakdown with author**
 
-**Step 9: Each commit block starts with COMMIT:<hash>|<author>, followed by numstat lines.**
+**Step 8: Each commit block starts with COMMIT:<hash>|<author>, followed by numstat lines.**
 
-**Step 10: Separate test files (matching test/|spec/|__tests__/) from production files.**
+**Step 9: Separate test files (matching test/|spec/|__tests__/) from production files.**
 > git log origin/<default> --since="<window>" --format="COMMIT:%H|%aN" --numstat
 
-**Step 11: 3. Commit timestamps for session detection and hourly distribution (with author)**
+**Step 10: 3. Commit timestamps for session detection and hourly distribution (with author)**
 > git log origin/<default> --since="<window>" --format="%at|%aN|%ai|%s" | sort -n
 
-**Step 12: 4. Files most frequently changed (hotspot analysis)**
+**Step 11: 4. Files most frequently changed (hotspot analysis)**
 > git log origin/<default> --since="<window>" --format="" --name-only | grep -v '^$' | sort | uniq -c | sort -rn
 
-**Step 13: 5. PR numbers from commit messages (extract #NNN patterns)**
-> git log origin/<default> --since="<window>" --format="%s" | grep -oE '#[0-9]+' | sed 's/^#//' | sort -n | uniq | sed 's/^/#/'
+**Step 12: 5. PR/MR numbers from commit messages (GitHub #NNN, GitLab !NNN)**
+> git log origin/<default> --since="<window>" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
 
-**Step 14: 6. Per-author file hotspots (who touches what)**
+**Step 13: 6. Per-author file hotspots (who touches what)**
 > git log origin/<default> --since="<window>" --format="AUTHOR:%aN" --name-only
 
-**Step 15: 7. Per-author commit counts (quick summary)**
+**Step 14: 7. Per-author commit counts (quick summary)**
 > git shortlog origin/<default> --since="<window>" -sn --no-merges
 
-**Step 16: 8. Greptile triage history (if available)**
+**Step 15: 8. Greptile triage history (if available)**
 > cat ~/.gstack/greptile-history.md 2>/dev/null || true
 
-**Step 17: 9. TODOS.md backlog (if available)**
+**Step 16: 9. TODOS.md backlog (if available)**
 > cat TODOS.md 2>/dev/null || true
 
-**Step 18: 10. Test file count**
+**Step 17: 10. Test file count**
 > find . -name '*.test.*' -o -name '*.spec.*' -o -name '*_test.*' -o -name '*_spec.*' 2>/dev/null | grep -v node_modules | wc -l
 
-**Step 19: 11. Regression test commits in window**
+**Step 18: 11. Regression test commits in window**
 > git log origin/<default> --since="<window>" --oneline --grep="test(qa):" --grep="test(design):" --grep="test: coverage"
 
-**Step 20: 12. gstack skill usage telemetry (if available)**
+**Step 19: 12. gstack skill usage telemetry (if available)**
 > cat ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
 
-**Step 21: 12. Test files changed in window**
+**Step 20: 12. Test files changed in window**
 > git log origin/<default> --since="<window>" --format="" --name-only | grep -E '\.(test|spec)\.' | sort -u | wc -l
 
-**Step 22: Team streak: all unique commit dates (local time) — no hard cutoff**
+**Step 21: Team streak: all unique commit dates (local time) — no hard cutoff**
 > git log origin/<default> --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 
-**Step 23: Personal streak: only the current user's commits**
+**Step 22: Personal streak: only the current user's commits**
 > git log origin/<default> --author="<user_name>" --format="%ad" --date=format:"%Y-%m-%d" | sort -u
 
-**Step 24: Count existing retros for today to get next sequence number**
+**Step 23: Count existing retros for today to get next sequence number**
 > today=$(date +%Y-%m-%d)
 
-**Step 25: Save as .context/retros/${today}-${next}.json**
+**Step 24: Save as .context/retros/${today}-${next}.json**
 > Use the Write tool to save the JSON file with this schema:
 
-**Step 26: Engineering Retro: [date range]**
+**Step 25: Engineering Retro: [date range]**
 
-**Step 27: Global Retrospective Mode**
+**Step 26: Global Retrospective Mode**
 > When the user runs `/retro global` (or `/retro global 14d`), follow this flow instead of the repo-scoped Steps 1-14. This mode works from any directory — it does NOT require being inside a git repo.
 
-**Step 28: Commits with stats**
+**Step 27: Commits with stats**
 > git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%H|%aN|%ai|%s" --shortstat
 
-**Step 29: Commit timestamps for session detection, streak, and context switching**
+**Step 28: Commit timestamps for session detection, streak, and context switching**
 > git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%at|%aN|%ai|%s" | sort -n
 
-**Step 30: Per-author commit counts**
+**Step 29: Per-author commit counts**
 > git -C <path> shortlog origin/$DEFAULT --since="<start_date>T00:00:00" -sn --no-merges
 
-**Step 31: PR numbers from commit messages**
-> git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%s" | grep -oE '#[0-9]+' | sort -n | uniq
+**Step 30: PR/MR numbers from commit messages (GitHub #NNN, GitLab !NNN)**
+> git -C <path> log origin/$DEFAULT --since="<start_date>T00:00:00" --format="%s" | grep -oE '[#!][0-9]+' | sort -t'#' -k1 | uniq
 
-**Step 32: 🚀 Your Week: [user name] — [date range]**
+**Step 31: 🚀 Your Week: [user name] — [date range]**
 > This section is the **shareable personal card**. It contains ONLY the current user's
 
-**Step 33: Global Engineering Retro: [date range]**
+**Step 32: Global Engineering Retro: [date range]**
 > Everything below is the full analysis — team data, project breakdowns, patterns.
 
-**Step 34: Compare Mode**
+**Step 33: Compare Mode**
 > When the user runs `/retro compare` (or `/retro compare 14d`):
 
-**Step 35: Tone**
+**Step 34: Tone**
 
-**Step 36: Important Rules**
+**Step 35: Important Rules**
 
 ## Where It Fits
 
