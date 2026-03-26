@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T03:38:58.928003+00:00",
+  "generated_at": "2026-03-26T06:11:08.140769+00:00",
   "gstack_source": "https://github.com/garrytan/gstack",
   "skill_count": 28,
   "skills": [
@@ -11,8 +11,8 @@
       "description_oneline": "Fast headless browser for QA testing and site dogfooding. Navigate pages, interact with",
       "version": "1.1.0",
       "phase": "Other",
-      "template_lines": 249,
-      "unique_lines": 229,
+      "template_lines": 271,
+      "unique_lines": 251,
       "section_count": 48,
       "sections": [
         "gstack browse: QA Testing & Dogfooding",
