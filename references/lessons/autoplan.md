@@ -89,7 +89,7 @@ Structured output for the **Other** phase of your sprint.
 **Step 17: /autoplan Review Complete**
 
 **Step 18: Completion: Write Review Logs**
-> On approval, write 3 separate review log entries so /ship's dashboard recognizes them:
+> On approval, write 3 separate review log entries so /ship's dashboard recognizes them.
 
 **Step 19: Important Rules**
 
